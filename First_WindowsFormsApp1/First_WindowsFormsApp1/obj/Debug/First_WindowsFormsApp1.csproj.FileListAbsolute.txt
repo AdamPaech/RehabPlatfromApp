@@ -1,0 +1,11 @@
+D:\VisualStudioProjects\AplikacjaC#\First_WindowsFormsApp1\First_WindowsFormsApp1\bin\Debug\First_WindowsFormsApp1.exe.config
+D:\VisualStudioProjects\AplikacjaC#\First_WindowsFormsApp1\First_WindowsFormsApp1\bin\Debug\First_WindowsFormsApp1.exe
+D:\VisualStudioProjects\AplikacjaC#\First_WindowsFormsApp1\First_WindowsFormsApp1\bin\Debug\First_WindowsFormsApp1.pdb
+D:\VisualStudioProjects\AplikacjaC#\First_WindowsFormsApp1\First_WindowsFormsApp1\obj\Debug\First_WindowsFormsApp1.csproj.AssemblyReference.cache
+D:\VisualStudioProjects\AplikacjaC#\First_WindowsFormsApp1\First_WindowsFormsApp1\obj\Debug\First_WindowsFormsApp1.csproj.SuggestedBindingRedirects.cache
+D:\VisualStudioProjects\AplikacjaC#\First_WindowsFormsApp1\First_WindowsFormsApp1\obj\Debug\First_WindowsFormsApp1.Properties.Resources.resources
+D:\VisualStudioProjects\AplikacjaC#\First_WindowsFormsApp1\First_WindowsFormsApp1\obj\Debug\First_WindowsFormsApp1.csproj.GenerateResource.cache
+D:\VisualStudioProjects\AplikacjaC#\First_WindowsFormsApp1\First_WindowsFormsApp1\obj\Debug\First_WindowsFormsApp1.csproj.CoreCompileInputs.cache
+D:\VisualStudioProjects\AplikacjaC#\First_WindowsFormsApp1\First_WindowsFormsApp1\obj\Debug\First_WindowsFormsApp1.exe
+D:\VisualStudioProjects\AplikacjaC#\First_WindowsFormsApp1\First_WindowsFormsApp1\obj\Debug\First_WindowsFormsApp1.pdb
+D:\VisualStudioProjects\AplikacjaC#\First_WindowsFormsApp1\First_WindowsFormsApp1\obj\Debug\First_WindowsFormsApp1.Form1.resources
