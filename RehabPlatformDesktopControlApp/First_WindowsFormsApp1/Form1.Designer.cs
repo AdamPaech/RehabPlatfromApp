@@ -108,6 +108,7 @@
             this.btnInitialize = new System.Windows.Forms.Button();
             this.btnSetreps = new System.Windows.Forms.Button();
             this.btnSetrange = new System.Windows.Forms.Button();
+            this.groupBox14 = new System.Windows.Forms.GroupBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox7.SuspendLayout();
@@ -123,6 +124,7 @@
             this.menuStrip1.SuspendLayout();
             this.groupBox9.SuspendLayout();
             this.gBoxengine.SuspendLayout();
+            this.groupBox14.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -341,10 +343,10 @@
             // tBoxDataOut
             // 
             this.tBoxDataOut.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.tBoxDataOut.Location = new System.Drawing.Point(15, 44);
+            this.tBoxDataOut.Location = new System.Drawing.Point(4, 13);
             this.tBoxDataOut.Multiline = true;
             this.tBoxDataOut.Name = "tBoxDataOut";
-            this.tBoxDataOut.Size = new System.Drawing.Size(81, 28);
+            this.tBoxDataOut.Size = new System.Drawing.Size(75, 28);
             this.tBoxDataOut.TabIndex = 5;
             this.tBoxDataOut.TextChanged += new System.EventHandler(this.tBoxDataOut_TextChanged);
             this.tBoxDataOut.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tBoxDataOut_KeyDown);
@@ -355,20 +357,18 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.groupBox14);
             this.groupBox3.Controls.Add(this.groupBox13);
             this.groupBox3.Controls.Add(this.groupBox12);
             this.groupBox3.Controls.Add(this.groupBox11);
             this.groupBox3.Controls.Add(this.groupBox10);
-            this.groupBox3.Controls.Add(this.btnSendData);
             this.groupBox3.Controls.Add(this.lblDataOutLength);
-            this.groupBox3.Controls.Add(this.btnClearDataOut);
             this.groupBox3.Controls.Add(this.label6);
             this.groupBox3.Controls.Add(this.label7);
             this.groupBox3.Controls.Add(this.groupBox4);
-            this.groupBox3.Controls.Add(this.tBoxDataOut);
-            this.groupBox3.Location = new System.Drawing.Point(286, 117);
+            this.groupBox3.Location = new System.Drawing.Point(286, 112);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(426, 352);
+            this.groupBox3.Size = new System.Drawing.Size(426, 358);
             this.groupBox3.TabIndex = 6;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Manipulator Control";
@@ -379,7 +379,7 @@
             this.groupBox13.Controls.Add(this.chBoxserialmotion);
             this.groupBox13.Controls.Add(this.chBoxsinglemode);
             this.groupBox13.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.groupBox13.Location = new System.Drawing.Point(303, 31);
+            this.groupBox13.Location = new System.Drawing.Point(303, 34);
             this.groupBox13.Name = "groupBox13";
             this.groupBox13.Size = new System.Drawing.Size(117, 113);
             this.groupBox13.TabIndex = 19;
@@ -413,7 +413,7 @@
             this.groupBox12.Controls.Add(this.chboxLeftleg);
             this.groupBox12.Controls.Add(this.chboxRightleg);
             this.groupBox12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.groupBox12.Location = new System.Drawing.Point(303, 150);
+            this.groupBox12.Location = new System.Drawing.Point(303, 153);
             this.groupBox12.Name = "groupBox12";
             this.groupBox12.Size = new System.Drawing.Size(117, 120);
             this.groupBox12.TabIndex = 18;
@@ -423,7 +423,7 @@
             // chboxLeftleg
             // 
             this.chboxLeftleg.AutoSize = true;
-            this.chboxLeftleg.Location = new System.Drawing.Point(9, 43);
+            this.chboxLeftleg.Location = new System.Drawing.Point(9, 39);
             this.chboxLeftleg.Name = "chboxLeftleg";
             this.chboxLeftleg.Size = new System.Drawing.Size(46, 19);
             this.chboxLeftleg.TabIndex = 2;
@@ -434,7 +434,7 @@
             // chboxRightleg
             // 
             this.chboxRightleg.AutoSize = true;
-            this.chboxRightleg.Location = new System.Drawing.Point(9, 72);
+            this.chboxRightleg.Location = new System.Drawing.Point(9, 74);
             this.chboxRightleg.Name = "chboxRightleg";
             this.chboxRightleg.Size = new System.Drawing.Size(55, 19);
             this.chboxRightleg.TabIndex = 1;
@@ -453,7 +453,7 @@
             this.groupBox11.Controls.Add(this.label10);
             this.groupBox11.Controls.Add(this.label9);
             this.groupBox11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.groupBox11.Location = new System.Drawing.Point(15, 150);
+            this.groupBox11.Location = new System.Drawing.Point(15, 153);
             this.groupBox11.Name = "groupBox11";
             this.groupBox11.Size = new System.Drawing.Size(281, 120);
             this.groupBox11.TabIndex = 17;
@@ -518,7 +518,7 @@
             this.groupBox10.Controls.Add(this.btnLD1);
             this.groupBox10.Controls.Add(this.btnLD2);
             this.groupBox10.Controls.Add(this.btnLD3);
-            this.groupBox10.Location = new System.Drawing.Point(15, 292);
+            this.groupBox10.Location = new System.Drawing.Point(15, 295);
             this.groupBox10.Name = "groupBox10";
             this.groupBox10.Size = new System.Drawing.Size(396, 54);
             this.groupBox10.TabIndex = 16;
@@ -557,9 +557,9 @@
             // 
             // btnSendData
             // 
-            this.btnSendData.Location = new System.Drawing.Point(15, 77);
+            this.btnSendData.Location = new System.Drawing.Point(4, 48);
             this.btnSendData.Name = "btnSendData";
-            this.btnSendData.Size = new System.Drawing.Size(81, 28);
+            this.btnSendData.Size = new System.Drawing.Size(75, 28);
             this.btnSendData.TabIndex = 2;
             this.btnSendData.Text = "SEND";
             this.btnSendData.UseVisualStyleBackColor = true;
@@ -569,7 +569,7 @@
             // 
             this.lblDataOutLength.AutoSize = true;
             this.lblDataOutLength.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lblDataOutLength.Location = new System.Drawing.Point(232, 13);
+            this.lblDataOutLength.Location = new System.Drawing.Point(232, 16);
             this.lblDataOutLength.Name = "lblDataOutLength";
             this.lblDataOutLength.Size = new System.Drawing.Size(21, 15);
             this.lblDataOutLength.TabIndex = 8;
@@ -578,9 +578,9 @@
             // 
             // btnClearDataOut
             // 
-            this.btnClearDataOut.Location = new System.Drawing.Point(15, 111);
+            this.btnClearDataOut.Location = new System.Drawing.Point(4, 80);
             this.btnClearDataOut.Name = "btnClearDataOut";
-            this.btnClearDataOut.Size = new System.Drawing.Size(81, 28);
+            this.btnClearDataOut.Size = new System.Drawing.Size(75, 28);
             this.btnClearDataOut.TabIndex = 6;
             this.btnClearDataOut.Text = "CLEAR";
             this.btnClearDataOut.UseVisualStyleBackColor = true;
@@ -590,7 +590,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label6.Location = new System.Drawing.Point(122, 13);
+            this.label6.Location = new System.Drawing.Point(122, 16);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(105, 15);
             this.label6.TabIndex = 7;
@@ -601,7 +601,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label7.Location = new System.Drawing.Point(12, 22);
+            this.label7.Location = new System.Drawing.Point(14, 19);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(85, 15);
             this.label7.TabIndex = 13;
@@ -618,7 +618,7 @@
             this.groupBox4.Controls.Add(this.btn30);
             this.groupBox4.Controls.Add(this.btn15);
             this.groupBox4.Controls.Add(this.btn0);
-            this.groupBox4.Location = new System.Drawing.Point(103, 31);
+            this.groupBox4.Location = new System.Drawing.Point(103, 34);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(193, 113);
             this.groupBox4.TabIndex = 7;
@@ -934,7 +934,7 @@
             this.gBoxengine.Controls.Add(this.btnInitialize);
             this.gBoxengine.Location = new System.Drawing.Point(286, 43);
             this.gBoxengine.Name = "gBoxengine";
-            this.gBoxengine.Size = new System.Drawing.Size(426, 71);
+            this.gBoxengine.Size = new System.Drawing.Size(426, 68);
             this.gBoxengine.TabIndex = 12;
             this.gBoxengine.TabStop = false;
             this.gBoxengine.Text = "Engine control";
@@ -944,7 +944,7 @@
             this.btnStop.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnStop.Location = new System.Drawing.Point(247, 21);
             this.btnStop.Name = "btnStop";
-            this.btnStop.Size = new System.Drawing.Size(124, 39);
+            this.btnStop.Size = new System.Drawing.Size(124, 35);
             this.btnStop.TabIndex = 1;
             this.btnStop.Text = "STOP";
             this.btnStop.UseVisualStyleBackColor = true;
@@ -955,7 +955,7 @@
             this.btnInitialize.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnInitialize.Location = new System.Drawing.Point(52, 21);
             this.btnInitialize.Name = "btnInitialize";
-            this.btnInitialize.Size = new System.Drawing.Size(124, 39);
+            this.btnInitialize.Size = new System.Drawing.Size(124, 35);
             this.btnInitialize.TabIndex = 0;
             this.btnInitialize.Text = "INITIALIZE";
             this.btnInitialize.UseVisualStyleBackColor = true;
@@ -980,6 +980,17 @@
             this.btnSetrange.Text = "SET RANGE";
             this.btnSetrange.UseVisualStyleBackColor = true;
             this.btnSetrange.Click += new System.EventHandler(this.btnSetrange_Click);
+            // 
+            // groupBox14
+            // 
+            this.groupBox14.Controls.Add(this.btnSendData);
+            this.groupBox14.Controls.Add(this.tBoxDataOut);
+            this.groupBox14.Controls.Add(this.btnClearDataOut);
+            this.groupBox14.Location = new System.Drawing.Point(15, 34);
+            this.groupBox14.Name = "groupBox14";
+            this.groupBox14.Size = new System.Drawing.Size(83, 113);
+            this.groupBox14.TabIndex = 20;
+            this.groupBox14.TabStop = false;
             // 
             // Form1
             // 
@@ -1023,6 +1034,8 @@
             this.menuStrip1.PerformLayout();
             this.groupBox9.ResumeLayout(false);
             this.gBoxengine.ResumeLayout(false);
+            this.groupBox14.ResumeLayout(false);
+            this.groupBox14.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1108,6 +1121,7 @@
         private System.Windows.Forms.Button btnInitialize;
         private System.Windows.Forms.Button btnSetreps;
         private System.Windows.Forms.Button btnSetrange;
+        private System.Windows.Forms.GroupBox groupBox14;
     }
 }
 

@@ -11,6 +11,7 @@ using System.IO.Ports;
 using System.Runtime.InteropServices;
 using System.Diagnostics;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.Button;
 
 namespace First_WindowsFormsApp1
 {
@@ -84,6 +85,13 @@ namespace First_WindowsFormsApp1
 
             btnOpen.Enabled = true;
             btnClose.Enabled = false;
+
+            //serial mode groupbox is off at start
+            groupBox11.Enabled = false;
+            //single mode groupbox is off at start
+            groupBox4.Enabled = false;
+            // 2nd single mode groupbox is off at start
+            groupBox14.Enabled = false;
 
             chBoxDtrEnable.Checked = false;
             serialPort1.DtrEnable = false;
@@ -535,6 +543,13 @@ namespace First_WindowsFormsApp1
                 serialPort1.Write(dataOUT);
                 chBoxserialmotion.Checked = false;
                 chBoxsinglemode.Checked = true;
+                groupBox4.Enabled = true;
+                groupBox14.Enabled = true;
+            }
+            else 
+            { 
+                groupBox4.Enabled = false;
+                groupBox14.Enabled = false;
             }
         }
 
@@ -547,7 +562,9 @@ namespace First_WindowsFormsApp1
                 serialPort1.Write(dataOUT);
                 chBoxsinglemode.Checked = false;
                 chBoxserialmotion.Checked = true;
+                groupBox11.Enabled = true;
             }
+            else { groupBox11.Enabled = false; }
         }
 
         private void btnInitialize_Click(object sender, EventArgs e)
