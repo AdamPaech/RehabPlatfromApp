@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.IO.Ports;
 using System.Runtime.InteropServices;
 using System.Diagnostics;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace First_WindowsFormsApp1
 {
@@ -40,13 +41,18 @@ namespace First_WindowsFormsApp1
             if(serialPort1.IsOpen)
             {
                 int dataOUTLength_1 = tBoxDataOut.TextLength;
-                if(dataOUTLength_1 == 1)
+                if (dataOUTLength_1 == 1)
                 {
                     dataOUT = "00" + tBoxDataOut.Text + 'P';
                 }
-                else
+                else if (dataOUTLength_1 == 2)
                 {
                     dataOUT = '0' + tBoxDataOut.Text + 'P';
+                }
+                else
+                {
+                    dataOUT = "090P";
+                    tBoxDataOut.Text = "90";
                 }
                 
                 
@@ -472,14 +478,18 @@ namespace First_WindowsFormsApp1
             }
         }
 
-        private void btnBASE_Click(object sender, EventArgs e)
-        {
-            ///what is base
-        }
+        //private void btnBASE_Click(object sender, EventArgs e)
+        //{
+        //    ///what is base
+        //}
 
         private void btnSAFE_Click(object sender, EventArgs e)
         {
-            ///what is safe
+            if (serialPort1.IsOpen)
+            {
+                dataOUT = "000P";
+                serialPort1.Write(dataOUT);
+            }
         }
 
         private void chboxRightleg_CheckedChanged(object sender, EventArgs e)
@@ -537,6 +547,107 @@ namespace First_WindowsFormsApp1
                 serialPort1.Write(dataOUT);
                 chBoxsinglemode.Checked = false;
                 chBoxserialmotion.Checked = true;
+            }
+        }
+
+        private void btnInitialize_Click(object sender, EventArgs e)
+        {
+            if (serialPort1.IsOpen)
+            {
+                dataOUT = "INIT";
+                serialPort1.Write(dataOUT);
+            }
+        }
+
+        private void btnStop_Click(object sender, EventArgs e)
+        {
+            if (serialPort1.IsOpen)
+            {
+                dataOUT = "STOP";
+                serialPort1.Write(dataOUT);
+            }
+        }
+
+        private void btnSetreps_Click(object sender, EventArgs e)
+        {
+            if (serialPort1.IsOpen)
+            {
+                int dataOUTLength_2 = tBoxnumberoreps.TextLength;
+                if (dataOUTLength_2 == 1)
+                {
+                    dataOUT = "00" + tBoxnumberoreps.Text + 'N';
+                }
+                else if (dataOUTLength_2 == 2)
+                {
+                    int liczba_powt = Int32.Parse(tBoxnumberoreps.Text);
+                    //max liczba_powt = 20
+                    if (liczba_powt > 20)
+                    {
+                        tBoxnumberoreps.Text = "20";
+                        dataOUT = "020N";
+                    }
+                    else if (liczba_powt <= 20)
+                    {
+                        dataOUT = '0' + tBoxnumberoreps.Text + 'N';
+                    }
+                }
+
+                if (sendWith == "WriteLine")
+                {
+                    serialPort1.WriteLine(dataOUT);
+                }
+                else if (sendWith == "Write")
+                {
+                    serialPort1.Write(dataOUT);
+                }
+            }
+        }
+
+        private void btnSetrange_Click(object sender, EventArgs e)
+        {
+            if (serialPort1.IsOpen)
+            {
+                int dataOUTLength_3 = tBoxrangeomotion.TextLength;
+                if (dataOUTLength_3 == 1)
+                {
+                    dataOUT = "00" + tBoxrangeomotion.Text + 'R';
+                }
+                else if (dataOUTLength_3 == 2)
+                {
+                    int liczba_zakresu = Int32.Parse(tBoxrangeomotion.Text);
+                    if (liczba_zakresu > 90)
+                    {
+                        tBoxrangeomotion.Text = "90";
+                        dataOUT = "090R";
+                    }
+                    else if (liczba_zakresu <= 90)
+                    {
+                        dataOUT = '0' + tBoxrangeomotion.Text + 'R';
+                    }
+                }
+                else
+                {
+                    dataOUT = "090R";
+                    tBoxrangeomotion.Text = "90";
+                }
+
+                if (sendWith == "WriteLine")
+                {
+                    serialPort1.WriteLine(dataOUT);
+                }
+                else if (sendWith == "Write")
+                {
+                    serialPort1.Write(dataOUT);
+                }
+            }
+        }
+
+        private void btnStartserial_Click(object sender, EventArgs e)
+        {
+            if (serialPort1.IsOpen)
+            {
+                dataOUT = "STSE";
+                serialPort1.Write(dataOUT);
             }
         }
     }

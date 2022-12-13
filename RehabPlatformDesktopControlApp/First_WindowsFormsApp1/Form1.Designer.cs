@@ -51,6 +51,9 @@
             this.tBoxDataOut = new System.Windows.Forms.TextBox();
             this.serialPort1 = new System.IO.Ports.SerialPort(this.components);
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.groupBox13 = new System.Windows.Forms.GroupBox();
+            this.chBoxserialmotion = new System.Windows.Forms.CheckBox();
+            this.chBoxsinglemode = new System.Windows.Forms.CheckBox();
             this.groupBox12 = new System.Windows.Forms.GroupBox();
             this.chboxLeftleg = new System.Windows.Forms.CheckBox();
             this.chboxRightleg = new System.Windows.Forms.CheckBox();
@@ -72,7 +75,6 @@
             this.label7 = new System.Windows.Forms.Label();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.btnSAFE = new System.Windows.Forms.Button();
-            this.btnBASE = new System.Windows.Forms.Button();
             this.btn90 = new System.Windows.Forms.Button();
             this.btn75 = new System.Windows.Forms.Button();
             this.btn60 = new System.Windows.Forms.Button();
@@ -101,16 +103,16 @@
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.groupBox9 = new System.Windows.Forms.GroupBox();
             this.btnExternalexe = new System.Windows.Forms.Button();
-            this.groupBox13 = new System.Windows.Forms.GroupBox();
-            this.chBoxsinglemode = new System.Windows.Forms.CheckBox();
-            this.chBoxserialmotion = new System.Windows.Forms.CheckBox();
             this.gBoxengine = new System.Windows.Forms.GroupBox();
-            this.btnInitialize = new System.Windows.Forms.Button();
             this.btnStop = new System.Windows.Forms.Button();
+            this.btnInitialize = new System.Windows.Forms.Button();
+            this.btnSetreps = new System.Windows.Forms.Button();
+            this.btnSetrange = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox7.SuspendLayout();
             this.groupBox3.SuspendLayout();
+            this.groupBox13.SuspendLayout();
             this.groupBox12.SuspendLayout();
             this.groupBox11.SuspendLayout();
             this.groupBox10.SuspendLayout();
@@ -120,7 +122,6 @@
             this.groupBox8.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.groupBox9.SuspendLayout();
-            this.groupBox13.SuspendLayout();
             this.gBoxengine.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -373,14 +374,48 @@
             this.groupBox3.Text = "Manipulator Control";
             this.groupBox3.Enter += new System.EventHandler(this.groupBox3_Enter);
             // 
+            // groupBox13
+            // 
+            this.groupBox13.Controls.Add(this.chBoxserialmotion);
+            this.groupBox13.Controls.Add(this.chBoxsinglemode);
+            this.groupBox13.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.groupBox13.Location = new System.Drawing.Point(303, 31);
+            this.groupBox13.Name = "groupBox13";
+            this.groupBox13.Size = new System.Drawing.Size(117, 113);
+            this.groupBox13.TabIndex = 19;
+            this.groupBox13.TabStop = false;
+            this.groupBox13.Text = "Mode selection";
+            // 
+            // chBoxserialmotion
+            // 
+            this.chBoxserialmotion.AutoSize = true;
+            this.chBoxserialmotion.Location = new System.Drawing.Point(7, 67);
+            this.chBoxserialmotion.Name = "chBoxserialmotion";
+            this.chBoxserialmotion.Size = new System.Drawing.Size(99, 19);
+            this.chBoxserialmotion.TabIndex = 1;
+            this.chBoxserialmotion.Text = "Serial motion";
+            this.chBoxserialmotion.UseVisualStyleBackColor = true;
+            this.chBoxserialmotion.CheckedChanged += new System.EventHandler(this.chBoxserialmotion_CheckedChanged);
+            // 
+            // chBoxsinglemode
+            // 
+            this.chBoxsinglemode.AutoSize = true;
+            this.chBoxsinglemode.Location = new System.Drawing.Point(7, 35);
+            this.chBoxsinglemode.Name = "chBoxsinglemode";
+            this.chBoxsinglemode.Size = new System.Drawing.Size(102, 19);
+            this.chBoxsinglemode.TabIndex = 0;
+            this.chBoxsinglemode.Text = "Single motion";
+            this.chBoxsinglemode.UseVisualStyleBackColor = true;
+            this.chBoxsinglemode.CheckedChanged += new System.EventHandler(this.chBoxsinglemode_CheckedChanged);
+            // 
             // groupBox12
             // 
             this.groupBox12.Controls.Add(this.chboxLeftleg);
             this.groupBox12.Controls.Add(this.chboxRightleg);
             this.groupBox12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.groupBox12.Location = new System.Drawing.Point(211, 151);
+            this.groupBox12.Location = new System.Drawing.Point(303, 150);
             this.groupBox12.Name = "groupBox12";
-            this.groupBox12.Size = new System.Drawing.Size(85, 119);
+            this.groupBox12.Size = new System.Drawing.Size(117, 120);
             this.groupBox12.TabIndex = 18;
             this.groupBox12.TabStop = false;
             this.groupBox12.Text = "Leg selection";
@@ -409,6 +444,8 @@
             // 
             // groupBox11
             // 
+            this.groupBox11.Controls.Add(this.btnSetrange);
+            this.groupBox11.Controls.Add(this.btnSetreps);
             this.groupBox11.Controls.Add(this.btnStopserial);
             this.groupBox11.Controls.Add(this.btnStartserial);
             this.groupBox11.Controls.Add(this.tBoxrangeomotion);
@@ -418,39 +455,40 @@
             this.groupBox11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.groupBox11.Location = new System.Drawing.Point(15, 150);
             this.groupBox11.Name = "groupBox11";
-            this.groupBox11.Size = new System.Drawing.Size(186, 120);
+            this.groupBox11.Size = new System.Drawing.Size(281, 120);
             this.groupBox11.TabIndex = 17;
             this.groupBox11.TabStop = false;
             this.groupBox11.Text = "Serial motion";
             // 
             // btnStopserial
             // 
-            this.btnStopserial.Location = new System.Drawing.Point(100, 85);
+            this.btnStopserial.Location = new System.Drawing.Point(163, 85);
             this.btnStopserial.Name = "btnStopserial";
-            this.btnStopserial.Size = new System.Drawing.Size(75, 23);
+            this.btnStopserial.Size = new System.Drawing.Size(89, 23);
             this.btnStopserial.TabIndex = 20;
             this.btnStopserial.Text = "STOP";
             this.btnStopserial.UseVisualStyleBackColor = true;
             // 
             // btnStartserial
             // 
-            this.btnStartserial.Location = new System.Drawing.Point(10, 85);
+            this.btnStartserial.Location = new System.Drawing.Point(29, 85);
             this.btnStartserial.Name = "btnStartserial";
-            this.btnStartserial.Size = new System.Drawing.Size(75, 23);
+            this.btnStartserial.Size = new System.Drawing.Size(89, 23);
             this.btnStartserial.TabIndex = 19;
             this.btnStartserial.Text = "START";
             this.btnStartserial.UseVisualStyleBackColor = true;
+            this.btnStartserial.Click += new System.EventHandler(this.btnStartserial_Click);
             // 
             // tBoxrangeomotion
             // 
-            this.tBoxrangeomotion.Location = new System.Drawing.Point(138, 53);
+            this.tBoxrangeomotion.Location = new System.Drawing.Point(139, 53);
             this.tBoxrangeomotion.Name = "tBoxrangeomotion";
             this.tBoxrangeomotion.Size = new System.Drawing.Size(41, 21);
             this.tBoxrangeomotion.TabIndex = 3;
             // 
             // tBoxnumberoreps
             // 
-            this.tBoxnumberoreps.Location = new System.Drawing.Point(138, 26);
+            this.tBoxnumberoreps.Location = new System.Drawing.Point(139, 26);
             this.tBoxnumberoreps.Name = "tBoxnumberoreps";
             this.tBoxnumberoreps.Size = new System.Drawing.Size(41, 21);
             this.tBoxnumberoreps.TabIndex = 2;
@@ -573,7 +611,6 @@
             // groupBox4
             // 
             this.groupBox4.Controls.Add(this.btnSAFE);
-            this.groupBox4.Controls.Add(this.btnBASE);
             this.groupBox4.Controls.Add(this.btn90);
             this.groupBox4.Controls.Add(this.btn75);
             this.groupBox4.Controls.Add(this.btn60);
@@ -590,24 +627,13 @@
             // btnSAFE
             // 
             this.btnSAFE.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnSAFE.Location = new System.Drawing.Point(132, 81);
+            this.btnSAFE.Location = new System.Drawing.Point(69, 81);
             this.btnSAFE.Name = "btnSAFE";
-            this.btnSAFE.Size = new System.Drawing.Size(55, 28);
+            this.btnSAFE.Size = new System.Drawing.Size(118, 28);
             this.btnSAFE.TabIndex = 22;
             this.btnSAFE.Text = "SAFE";
             this.btnSAFE.UseVisualStyleBackColor = true;
             this.btnSAFE.Click += new System.EventHandler(this.btnSAFE_Click);
-            // 
-            // btnBASE
-            // 
-            this.btnBASE.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnBASE.Location = new System.Drawing.Point(69, 81);
-            this.btnBASE.Name = "btnBASE";
-            this.btnBASE.Size = new System.Drawing.Size(55, 28);
-            this.btnBASE.TabIndex = 21;
-            this.btnBASE.Text = "BASE";
-            this.btnBASE.UseVisualStyleBackColor = true;
-            this.btnBASE.Click += new System.EventHandler(this.btnBASE_Click);
             // 
             // btn90
             // 
@@ -902,40 +928,6 @@
             this.btnExternalexe.UseVisualStyleBackColor = true;
             this.btnExternalexe.Click += new System.EventHandler(this.btnExternalexe_Click);
             // 
-            // groupBox13
-            // 
-            this.groupBox13.Controls.Add(this.chBoxserialmotion);
-            this.groupBox13.Controls.Add(this.chBoxsinglemode);
-            this.groupBox13.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.groupBox13.Location = new System.Drawing.Point(303, 31);
-            this.groupBox13.Name = "groupBox13";
-            this.groupBox13.Size = new System.Drawing.Size(117, 113);
-            this.groupBox13.TabIndex = 19;
-            this.groupBox13.TabStop = false;
-            this.groupBox13.Text = "Mode selection";
-            // 
-            // chBoxsinglemode
-            // 
-            this.chBoxsinglemode.AutoSize = true;
-            this.chBoxsinglemode.Location = new System.Drawing.Point(7, 35);
-            this.chBoxsinglemode.Name = "chBoxsinglemode";
-            this.chBoxsinglemode.Size = new System.Drawing.Size(102, 19);
-            this.chBoxsinglemode.TabIndex = 0;
-            this.chBoxsinglemode.Text = "Single motion";
-            this.chBoxsinglemode.UseVisualStyleBackColor = true;
-            this.chBoxsinglemode.CheckedChanged += new System.EventHandler(this.chBoxsinglemode_CheckedChanged);
-            // 
-            // chBoxserialmotion
-            // 
-            this.chBoxserialmotion.AutoSize = true;
-            this.chBoxserialmotion.Location = new System.Drawing.Point(7, 67);
-            this.chBoxserialmotion.Name = "chBoxserialmotion";
-            this.chBoxserialmotion.Size = new System.Drawing.Size(99, 19);
-            this.chBoxserialmotion.TabIndex = 1;
-            this.chBoxserialmotion.Text = "Serial motion";
-            this.chBoxserialmotion.UseVisualStyleBackColor = true;
-            this.chBoxserialmotion.CheckedChanged += new System.EventHandler(this.chBoxserialmotion_CheckedChanged);
-            // 
             // gBoxengine
             // 
             this.gBoxengine.Controls.Add(this.btnStop);
@@ -947,16 +939,6 @@
             this.gBoxengine.TabStop = false;
             this.gBoxengine.Text = "Engine control";
             // 
-            // btnInitialize
-            // 
-            this.btnInitialize.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnInitialize.Location = new System.Drawing.Point(52, 21);
-            this.btnInitialize.Name = "btnInitialize";
-            this.btnInitialize.Size = new System.Drawing.Size(124, 39);
-            this.btnInitialize.TabIndex = 0;
-            this.btnInitialize.Text = "INITIALIZE";
-            this.btnInitialize.UseVisualStyleBackColor = true;
-            // 
             // btnStop
             // 
             this.btnStop.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
@@ -966,6 +948,38 @@
             this.btnStop.TabIndex = 1;
             this.btnStop.Text = "STOP";
             this.btnStop.UseVisualStyleBackColor = true;
+            this.btnStop.Click += new System.EventHandler(this.btnStop_Click);
+            // 
+            // btnInitialize
+            // 
+            this.btnInitialize.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnInitialize.Location = new System.Drawing.Point(52, 21);
+            this.btnInitialize.Name = "btnInitialize";
+            this.btnInitialize.Size = new System.Drawing.Size(124, 39);
+            this.btnInitialize.TabIndex = 0;
+            this.btnInitialize.Text = "INITIALIZE";
+            this.btnInitialize.UseVisualStyleBackColor = true;
+            this.btnInitialize.Click += new System.EventHandler(this.btnInitialize_Click);
+            // 
+            // btnSetreps
+            // 
+            this.btnSetreps.Location = new System.Drawing.Point(186, 25);
+            this.btnSetreps.Name = "btnSetreps";
+            this.btnSetreps.Size = new System.Drawing.Size(89, 23);
+            this.btnSetreps.TabIndex = 21;
+            this.btnSetreps.Text = "SET REPS";
+            this.btnSetreps.UseVisualStyleBackColor = true;
+            this.btnSetreps.Click += new System.EventHandler(this.btnSetreps_Click);
+            // 
+            // btnSetrange
+            // 
+            this.btnSetrange.Location = new System.Drawing.Point(186, 52);
+            this.btnSetrange.Name = "btnSetrange";
+            this.btnSetrange.Size = new System.Drawing.Size(89, 23);
+            this.btnSetrange.TabIndex = 22;
+            this.btnSetrange.Text = "SET RANGE";
+            this.btnSetrange.UseVisualStyleBackColor = true;
+            this.btnSetrange.Click += new System.EventHandler(this.btnSetrange_Click);
             // 
             // Form1
             // 
@@ -991,6 +1005,8 @@
             this.groupBox7.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
+            this.groupBox13.ResumeLayout(false);
+            this.groupBox13.PerformLayout();
             this.groupBox12.ResumeLayout(false);
             this.groupBox12.PerformLayout();
             this.groupBox11.ResumeLayout(false);
@@ -1006,8 +1022,6 @@
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.groupBox9.ResumeLayout(false);
-            this.groupBox13.ResumeLayout(false);
-            this.groupBox13.PerformLayout();
             this.gBoxengine.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -1082,7 +1096,6 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Button btnSAFE;
-        private System.Windows.Forms.Button btnBASE;
         private System.Windows.Forms.Button btnStopserial;
         private System.Windows.Forms.Button btnStartserial;
         private System.Windows.Forms.CheckBox chboxLeftleg;
@@ -1093,6 +1106,8 @@
         private System.Windows.Forms.GroupBox gBoxengine;
         private System.Windows.Forms.Button btnStop;
         private System.Windows.Forms.Button btnInitialize;
+        private System.Windows.Forms.Button btnSetreps;
+        private System.Windows.Forms.Button btnSetrange;
     }
 }
 
