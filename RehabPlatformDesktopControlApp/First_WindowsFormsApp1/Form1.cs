@@ -119,11 +119,19 @@ namespace First_WindowsFormsApp1
         {
             try
             {
+                //choosing parameters
+                //serialPort1.PortName = cBoxCOMPORT.Text;
+                //serialPort1.BaudRate = Convert.ToInt32(CBoxBaudRate.Text);
+                //serialPort1.DataBits = Convert.ToInt32(CBoxDataBits.Text);
+                //serialPort1.StopBits = (StopBits)Enum.Parse(typeof(StopBits), CBoxStopBits.Text);
+                //serialPort1.Parity = (Parity)Enum.Parse(typeof(Parity), CBoxParityBits.Text);
+
+                //default parameters
                 serialPort1.PortName = cBoxCOMPORT.Text;
-                serialPort1.BaudRate = Convert.ToInt32(CBoxBaudRate.Text);
-                serialPort1.DataBits = Convert.ToInt32(CBoxDataBits.Text);
-                serialPort1.StopBits = (StopBits)Enum.Parse(typeof(StopBits), CBoxStopBits.Text);
-                serialPort1.Parity = (Parity)Enum.Parse(typeof(Parity), CBoxParityBits.Text);
+                serialPort1.BaudRate = 9600;
+                serialPort1.DataBits = 8;
+                serialPort1.StopBits = (StopBits)Enum.Parse(typeof(StopBits), "One");
+                serialPort1.Parity = (Parity)Enum.Parse(typeof(Parity), "None");
 
                 serialPort1.Open();
                 timer1.Start();
@@ -277,7 +285,7 @@ namespace First_WindowsFormsApp1
         private void serialPort1_DataReceived(object sender, SerialDataReceivedEventArgs e)
         {
 
-            //DataIN = serialPort1.ReadExisting();
+            DataIN = serialPort1.ReadExisting();
             this.Invoke(new EventHandler(ShowData));
         }
 
@@ -293,6 +301,16 @@ namespace First_WindowsFormsApp1
             //{
             //    tBoxDataIN.Text += DataIN;
             //}
+            if (DataIN != tBoxDataIN.Text)
+            {
+                tBoxDataIN.Text = DataIN;
+            }
+            if(DataIN == "PIP")
+            {
+                lblStatusEngine.Text = "ON";
+
+
+            }
         }
 
         private void chBoxAlwaysUpdate_CheckedChanged(object sender, EventArgs e)
@@ -405,8 +423,11 @@ namespace First_WindowsFormsApp1
             {
                 //int dataINLength = DataIN.Length;
                 //lblDataInLength.Text = String.Format("{0:00}", dataINLength);
-                DataIN = serialPort1.ReadExisting();
-                tBoxDataIN.Text = DataIN;
+                //DataIN = serialPort1.ReadExisting();
+                //if(DataIN != tBoxDataIN.Text)
+                //{
+                //    tBoxDataIN.Text = DataIN;
+                //}
             //    if (chBoxAlwaysUpdate.Checked)
             //    {
             //        tBoxDataIN.Text = DataIN;
@@ -528,6 +549,15 @@ namespace First_WindowsFormsApp1
                 groupBox4.Enabled = false;
                 groupBox14.Enabled = false;
                 groupBox11.Enabled = false;
+                //unchecking mode checkboxes
+                if (chBoxserialmotion.Checked == true)
+                {
+                    chBoxserialmotion.Checked = false;
+                }
+                if (chBoxsinglemode.Checked == true)
+                {
+                    chBoxsinglemode.Checked = false;
+                }
             }
         }
 
@@ -548,6 +578,15 @@ namespace First_WindowsFormsApp1
                 groupBox4.Enabled = false;
                 groupBox14.Enabled = false;
                 groupBox11.Enabled = false;
+                //unchecking mode checkboxes
+                if(chBoxserialmotion.Checked == true)
+                {
+                    chBoxserialmotion.Checked = false;
+                }
+                if (chBoxsinglemode.Checked == true)
+                {
+                    chBoxsinglemode.Checked = false;
+                }
             }
         }
 
@@ -693,6 +732,11 @@ namespace First_WindowsFormsApp1
                 dataOUT = "STSE";
                 serialPort1.Write(dataOUT);
             }
+        }
+
+        private void groupBox7_Enter(object sender, EventArgs e)
+        {
+
         }
     }
 }

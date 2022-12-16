@@ -32,17 +32,8 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.chBoxRTSEnable = new System.Windows.Forms.CheckBox();
             this.chBoxDtrEnable = new System.Windows.Forms.CheckBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.CBoxParityBits = new System.Windows.Forms.ComboBox();
-            this.CBoxStopBits = new System.Windows.Forms.ComboBox();
-            this.CBoxDataBits = new System.Windows.Forms.ComboBox();
             this.cBoxCOMPORT = new System.Windows.Forms.ComboBox();
-            this.CBoxBaudRate = new System.Windows.Forms.ComboBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
             this.lblStatusCom = new System.Windows.Forms.Label();
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
@@ -51,6 +42,9 @@
             this.tBoxDataOut = new System.Windows.Forms.TextBox();
             this.serialPort1 = new System.IO.Ports.SerialPort(this.components);
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.groupBox14 = new System.Windows.Forms.GroupBox();
+            this.btnSendData = new System.Windows.Forms.Button();
+            this.btnClearDataOut = new System.Windows.Forms.Button();
             this.groupBox13 = new System.Windows.Forms.GroupBox();
             this.chBoxserialmotion = new System.Windows.Forms.CheckBox();
             this.chBoxsinglemode = new System.Windows.Forms.CheckBox();
@@ -58,6 +52,8 @@
             this.chboxLeftleg = new System.Windows.Forms.CheckBox();
             this.chboxRightleg = new System.Windows.Forms.CheckBox();
             this.groupBox11 = new System.Windows.Forms.GroupBox();
+            this.btnSetrange = new System.Windows.Forms.Button();
+            this.btnSetreps = new System.Windows.Forms.Button();
             this.btnStopserial = new System.Windows.Forms.Button();
             this.btnStartserial = new System.Windows.Forms.Button();
             this.tBoxrangeomotion = new System.Windows.Forms.TextBox();
@@ -68,9 +64,7 @@
             this.btnLD1 = new System.Windows.Forms.Button();
             this.btnLD2 = new System.Windows.Forms.Button();
             this.btnLD3 = new System.Windows.Forms.Button();
-            this.btnSendData = new System.Windows.Forms.Button();
             this.lblDataOutLength = new System.Windows.Forms.Label();
-            this.btnClearDataOut = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
@@ -106,13 +100,15 @@
             this.gBoxengine = new System.Windows.Forms.GroupBox();
             this.btnStop = new System.Windows.Forms.Button();
             this.btnInitialize = new System.Windows.Forms.Button();
-            this.btnSetreps = new System.Windows.Forms.Button();
-            this.btnSetrange = new System.Windows.Forms.Button();
-            this.groupBox14 = new System.Windows.Forms.GroupBox();
+            this.gBoxenginestate = new System.Windows.Forms.GroupBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.lblStatusEngine = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.lblEncoderStatus = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
-            this.groupBox2.SuspendLayout();
             this.groupBox7.SuspendLayout();
             this.groupBox3.SuspendLayout();
+            this.groupBox14.SuspendLayout();
             this.groupBox13.SuspendLayout();
             this.groupBox12.SuspendLayout();
             this.groupBox11.SuspendLayout();
@@ -124,26 +120,22 @@
             this.menuStrip1.SuspendLayout();
             this.groupBox9.SuspendLayout();
             this.gBoxengine.SuspendLayout();
-            this.groupBox14.SuspendLayout();
+            this.gBoxenginestate.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.groupBox7);
             this.groupBox1.Controls.Add(this.chBoxRTSEnable);
+            this.groupBox1.Controls.Add(this.progressBar1);
             this.groupBox1.Controls.Add(this.chBoxDtrEnable);
-            this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.Add(this.btnClose);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.CBoxParityBits);
-            this.groupBox1.Controls.Add(this.CBoxStopBits);
-            this.groupBox1.Controls.Add(this.CBoxDataBits);
+            this.groupBox1.Controls.Add(this.btnOpen);
             this.groupBox1.Controls.Add(this.cBoxCOMPORT);
-            this.groupBox1.Controls.Add(this.CBoxBaudRate);
             this.groupBox1.Location = new System.Drawing.Point(5, 43);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(261, 197);
+            this.groupBox1.Size = new System.Drawing.Size(275, 216);
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Com Port Control";
@@ -153,7 +145,7 @@
             // 
             this.chBoxRTSEnable.AutoSize = true;
             this.chBoxRTSEnable.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.chBoxRTSEnable.Location = new System.Drawing.Point(121, 168);
+            this.chBoxRTSEnable.Location = new System.Drawing.Point(131, 177);
             this.chBoxRTSEnable.Name = "chBoxRTSEnable";
             this.chBoxRTSEnable.Size = new System.Drawing.Size(89, 17);
             this.chBoxRTSEnable.TabIndex = 15;
@@ -165,49 +157,13 @@
             // 
             this.chBoxDtrEnable.AutoSize = true;
             this.chBoxDtrEnable.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.chBoxDtrEnable.Location = new System.Drawing.Point(27, 168);
+            this.chBoxDtrEnable.Location = new System.Drawing.Point(27, 177);
             this.chBoxDtrEnable.Name = "chBoxDtrEnable";
             this.chBoxDtrEnable.Size = new System.Drawing.Size(90, 17);
             this.chBoxDtrEnable.TabIndex = 14;
             this.chBoxDtrEnable.Text = "DTR ENABLE";
             this.chBoxDtrEnable.UseVisualStyleBackColor = true;
             this.chBoxDtrEnable.CheckedChanged += new System.EventHandler(this.chBoxDtrEnable_CheckedChanged);
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(23, 53);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(69, 13);
-            this.label5.TabIndex = 13;
-            this.label5.Text = "BAUD RATE";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(23, 137);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(73, 13);
-            this.label4.TabIndex = 12;
-            this.label4.Text = "PARITY BITS";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(23, 80);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(63, 13);
-            this.label3.TabIndex = 11;
-            this.label3.Text = "DATA BITS";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(23, 107);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(63, 13);
-            this.label2.TabIndex = 10;
-            this.label2.Text = "STOP BITS";
             // 
             // label1
             // 
@@ -219,45 +175,6 @@
             this.label1.Text = "COM PORT";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
-            // CBoxParityBits
-            // 
-            this.CBoxParityBits.FormattingEnabled = true;
-            this.CBoxParityBits.Items.AddRange(new object[] {
-            "None",
-            "Odd",
-            "Even"});
-            this.CBoxParityBits.Location = new System.Drawing.Point(118, 134);
-            this.CBoxParityBits.Name = "CBoxParityBits";
-            this.CBoxParityBits.Size = new System.Drawing.Size(115, 21);
-            this.CBoxParityBits.TabIndex = 8;
-            this.CBoxParityBits.Text = "None";
-            // 
-            // CBoxStopBits
-            // 
-            this.CBoxStopBits.FormattingEnabled = true;
-            this.CBoxStopBits.Items.AddRange(new object[] {
-            "One",
-            "Two"});
-            this.CBoxStopBits.Location = new System.Drawing.Point(118, 104);
-            this.CBoxStopBits.Name = "CBoxStopBits";
-            this.CBoxStopBits.Size = new System.Drawing.Size(115, 21);
-            this.CBoxStopBits.TabIndex = 7;
-            this.CBoxStopBits.Text = "One";
-            // 
-            // CBoxDataBits
-            // 
-            this.CBoxDataBits.FormattingEnabled = true;
-            this.CBoxDataBits.Items.AddRange(new object[] {
-            "5",
-            "6",
-            "7",
-            "8"});
-            this.CBoxDataBits.Location = new System.Drawing.Point(118, 77);
-            this.CBoxDataBits.Name = "CBoxDataBits";
-            this.CBoxDataBits.Size = new System.Drawing.Size(115, 21);
-            this.CBoxDataBits.TabIndex = 5;
-            this.CBoxDataBits.Text = "8";
-            // 
             // cBoxCOMPORT
             // 
             this.cBoxCOMPORT.FormattingEnabled = true;
@@ -267,64 +184,40 @@
             this.cBoxCOMPORT.TabIndex = 6;
             this.cBoxCOMPORT.SelectedIndexChanged += new System.EventHandler(this.cBoxCOMPORT_SelectedIndexChanged);
             // 
-            // CBoxBaudRate
-            // 
-            this.CBoxBaudRate.FormattingEnabled = true;
-            this.CBoxBaudRate.Items.AddRange(new object[] {
-            "2400",
-            "4800",
-            "9600"});
-            this.CBoxBaudRate.Location = new System.Drawing.Point(118, 50);
-            this.CBoxBaudRate.Name = "CBoxBaudRate";
-            this.CBoxBaudRate.Size = new System.Drawing.Size(115, 21);
-            this.CBoxBaudRate.TabIndex = 4;
-            this.CBoxBaudRate.Text = "9600";
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.groupBox7);
-            this.groupBox2.Controls.Add(this.progressBar1);
-            this.groupBox2.Controls.Add(this.btnClose);
-            this.groupBox2.Controls.Add(this.btnOpen);
-            this.groupBox2.Location = new System.Drawing.Point(5, 256);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(261, 94);
-            this.groupBox2.TabIndex = 4;
-            this.groupBox2.TabStop = false;
-            // 
             // groupBox7
             // 
             this.groupBox7.Controls.Add(this.lblStatusCom);
-            this.groupBox7.Location = new System.Drawing.Point(177, 12);
+            this.groupBox7.Location = new System.Drawing.Point(182, 66);
             this.groupBox7.Name = "groupBox7";
-            this.groupBox7.Size = new System.Drawing.Size(78, 69);
+            this.groupBox7.Size = new System.Drawing.Size(78, 86);
             this.groupBox7.TabIndex = 6;
             this.groupBox7.TabStop = false;
             this.groupBox7.Text = "COM PORT STATUS";
+            this.groupBox7.Enter += new System.EventHandler(this.groupBox7_Enter);
             // 
             // lblStatusCom
             // 
             this.lblStatusCom.AutoSize = true;
-            this.lblStatusCom.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblStatusCom.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.lblStatusCom.Location = new System.Drawing.Point(21, 38);
             this.lblStatusCom.Name = "lblStatusCom";
-            this.lblStatusCom.Size = new System.Drawing.Size(35, 17);
+            this.lblStatusCom.Size = new System.Drawing.Size(38, 18);
             this.lblStatusCom.TabIndex = 0;
             this.lblStatusCom.Text = "OFF";
             this.lblStatusCom.Click += new System.EventHandler(this.lblStatusCom_Click);
             // 
             // progressBar1
             // 
-            this.progressBar1.Location = new System.Drawing.Point(6, 58);
+            this.progressBar1.Location = new System.Drawing.Point(9, 124);
             this.progressBar1.Name = "progressBar1";
             this.progressBar1.Size = new System.Drawing.Size(161, 23);
             this.progressBar1.TabIndex = 5;
             // 
             // btnClose
             // 
-            this.btnClose.Location = new System.Drawing.Point(89, 12);
+            this.btnClose.Location = new System.Drawing.Point(94, 66);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(78, 39);
+            this.btnClose.Size = new System.Drawing.Size(77, 47);
             this.btnClose.TabIndex = 1;
             this.btnClose.Text = "CLOSE";
             this.btnClose.UseVisualStyleBackColor = true;
@@ -332,9 +225,9 @@
             // 
             // btnOpen
             // 
-            this.btnOpen.Location = new System.Drawing.Point(6, 12);
+            this.btnOpen.Location = new System.Drawing.Point(9, 66);
             this.btnOpen.Name = "btnOpen";
-            this.btnOpen.Size = new System.Drawing.Size(77, 39);
+            this.btnOpen.Size = new System.Drawing.Size(77, 47);
             this.btnOpen.TabIndex = 0;
             this.btnOpen.Text = "OPEN";
             this.btnOpen.UseVisualStyleBackColor = true;
@@ -373,6 +266,37 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Manipulator Control";
             this.groupBox3.Enter += new System.EventHandler(this.groupBox3_Enter);
+            // 
+            // groupBox14
+            // 
+            this.groupBox14.Controls.Add(this.btnSendData);
+            this.groupBox14.Controls.Add(this.tBoxDataOut);
+            this.groupBox14.Controls.Add(this.btnClearDataOut);
+            this.groupBox14.Location = new System.Drawing.Point(15, 34);
+            this.groupBox14.Name = "groupBox14";
+            this.groupBox14.Size = new System.Drawing.Size(83, 113);
+            this.groupBox14.TabIndex = 20;
+            this.groupBox14.TabStop = false;
+            // 
+            // btnSendData
+            // 
+            this.btnSendData.Location = new System.Drawing.Point(4, 48);
+            this.btnSendData.Name = "btnSendData";
+            this.btnSendData.Size = new System.Drawing.Size(75, 28);
+            this.btnSendData.TabIndex = 2;
+            this.btnSendData.Text = "SEND";
+            this.btnSendData.UseVisualStyleBackColor = true;
+            this.btnSendData.Click += new System.EventHandler(this.btnSendData_Click);
+            // 
+            // btnClearDataOut
+            // 
+            this.btnClearDataOut.Location = new System.Drawing.Point(4, 80);
+            this.btnClearDataOut.Name = "btnClearDataOut";
+            this.btnClearDataOut.Size = new System.Drawing.Size(75, 28);
+            this.btnClearDataOut.TabIndex = 6;
+            this.btnClearDataOut.Text = "CLEAR";
+            this.btnClearDataOut.UseVisualStyleBackColor = true;
+            this.btnClearDataOut.Click += new System.EventHandler(this.btnClearDataOut_Click);
             // 
             // groupBox13
             // 
@@ -459,6 +383,26 @@
             this.groupBox11.TabIndex = 17;
             this.groupBox11.TabStop = false;
             this.groupBox11.Text = "Serial motion";
+            // 
+            // btnSetrange
+            // 
+            this.btnSetrange.Location = new System.Drawing.Point(186, 52);
+            this.btnSetrange.Name = "btnSetrange";
+            this.btnSetrange.Size = new System.Drawing.Size(89, 23);
+            this.btnSetrange.TabIndex = 22;
+            this.btnSetrange.Text = "SET RANGE";
+            this.btnSetrange.UseVisualStyleBackColor = true;
+            this.btnSetrange.Click += new System.EventHandler(this.btnSetrange_Click);
+            // 
+            // btnSetreps
+            // 
+            this.btnSetreps.Location = new System.Drawing.Point(186, 25);
+            this.btnSetreps.Name = "btnSetreps";
+            this.btnSetreps.Size = new System.Drawing.Size(89, 23);
+            this.btnSetreps.TabIndex = 21;
+            this.btnSetreps.Text = "SET REPS";
+            this.btnSetreps.UseVisualStyleBackColor = true;
+            this.btnSetreps.Click += new System.EventHandler(this.btnSetreps_Click);
             // 
             // btnStopserial
             // 
@@ -555,16 +499,6 @@
             this.btnLD3.UseVisualStyleBackColor = true;
             this.btnLD3.Click += new System.EventHandler(this.btnLD3_Click);
             // 
-            // btnSendData
-            // 
-            this.btnSendData.Location = new System.Drawing.Point(4, 48);
-            this.btnSendData.Name = "btnSendData";
-            this.btnSendData.Size = new System.Drawing.Size(75, 28);
-            this.btnSendData.TabIndex = 2;
-            this.btnSendData.Text = "SEND";
-            this.btnSendData.UseVisualStyleBackColor = true;
-            this.btnSendData.Click += new System.EventHandler(this.btnSendData_Click);
-            // 
             // lblDataOutLength
             // 
             this.lblDataOutLength.AutoSize = true;
@@ -575,16 +509,6 @@
             this.lblDataOutLength.TabIndex = 8;
             this.lblDataOutLength.Text = "00";
             this.lblDataOutLength.Click += new System.EventHandler(this.lblDataOutLength_Click);
-            // 
-            // btnClearDataOut
-            // 
-            this.btnClearDataOut.Location = new System.Drawing.Point(4, 80);
-            this.btnClearDataOut.Name = "btnClearDataOut";
-            this.btnClearDataOut.Size = new System.Drawing.Size(75, 28);
-            this.btnClearDataOut.TabIndex = 6;
-            this.btnClearDataOut.Text = "CLEAR";
-            this.btnClearDataOut.UseVisualStyleBackColor = true;
-            this.btnClearDataOut.Click += new System.EventHandler(this.btnClearDataOut_Click);
             // 
             // label6
             // 
@@ -786,9 +710,9 @@
             this.groupBox8.Controls.Add(this.chBoxAlwaysUpdate);
             this.groupBox8.Controls.Add(this.btnClearDataIN);
             this.groupBox8.Controls.Add(this.tBoxDataIN);
-            this.groupBox8.Location = new System.Drawing.Point(735, 27);
+            this.groupBox8.Location = new System.Drawing.Point(733, 250);
             this.groupBox8.Name = "groupBox8";
-            this.groupBox8.Size = new System.Drawing.Size(281, 352);
+            this.groupBox8.Size = new System.Drawing.Size(281, 256);
             this.groupBox8.TabIndex = 7;
             this.groupBox8.TabStop = false;
             this.groupBox8.Text = "Receiver Control";
@@ -904,7 +828,6 @@
             // 
             // timer1
             // 
-            this.timer1.Interval = 1000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // groupBox9
@@ -920,7 +843,7 @@
             // 
             // btnExternalexe
             // 
-            this.btnExternalexe.Location = new System.Drawing.Point(739, 411);
+            this.btnExternalexe.Location = new System.Drawing.Point(12, 279);
             this.btnExternalexe.Name = "btnExternalexe";
             this.btnExternalexe.Size = new System.Drawing.Size(142, 79);
             this.btnExternalexe.TabIndex = 11;
@@ -961,48 +884,70 @@
             this.btnInitialize.UseVisualStyleBackColor = true;
             this.btnInitialize.Click += new System.EventHandler(this.btnInitialize_Click);
             // 
-            // btnSetreps
+            // gBoxenginestate
             // 
-            this.btnSetreps.Location = new System.Drawing.Point(186, 25);
-            this.btnSetreps.Name = "btnSetreps";
-            this.btnSetreps.Size = new System.Drawing.Size(89, 23);
-            this.btnSetreps.TabIndex = 21;
-            this.btnSetreps.Text = "SET REPS";
-            this.btnSetreps.UseVisualStyleBackColor = true;
-            this.btnSetreps.Click += new System.EventHandler(this.btnSetreps_Click);
+            this.gBoxenginestate.Controls.Add(this.lblEncoderStatus);
+            this.gBoxenginestate.Controls.Add(this.label3);
+            this.gBoxenginestate.Controls.Add(this.lblStatusEngine);
+            this.gBoxenginestate.Controls.Add(this.label2);
+            this.gBoxenginestate.Location = new System.Drawing.Point(718, 43);
+            this.gBoxenginestate.Name = "gBoxenginestate";
+            this.gBoxenginestate.Size = new System.Drawing.Size(306, 183);
+            this.gBoxenginestate.TabIndex = 13;
+            this.gBoxenginestate.TabStop = false;
+            this.gBoxenginestate.Text = "Engine state";
             // 
-            // btnSetrange
+            // label2
             // 
-            this.btnSetrange.Location = new System.Drawing.Point(186, 52);
-            this.btnSetrange.Name = "btnSetrange";
-            this.btnSetrange.Size = new System.Drawing.Size(89, 23);
-            this.btnSetrange.TabIndex = 22;
-            this.btnSetrange.Text = "SET RANGE";
-            this.btnSetrange.UseVisualStyleBackColor = true;
-            this.btnSetrange.Click += new System.EventHandler(this.btnSetrange_Click);
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label2.Location = new System.Drawing.Point(12, 41);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(81, 15);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "Engine state: ";
             // 
-            // groupBox14
+            // lblStatusEngine
             // 
-            this.groupBox14.Controls.Add(this.btnSendData);
-            this.groupBox14.Controls.Add(this.tBoxDataOut);
-            this.groupBox14.Controls.Add(this.btnClearDataOut);
-            this.groupBox14.Location = new System.Drawing.Point(15, 34);
-            this.groupBox14.Name = "groupBox14";
-            this.groupBox14.Size = new System.Drawing.Size(83, 113);
-            this.groupBox14.TabIndex = 20;
-            this.groupBox14.TabStop = false;
+            this.lblStatusEngine.AutoSize = true;
+            this.lblStatusEngine.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblStatusEngine.Location = new System.Drawing.Point(99, 41);
+            this.lblStatusEngine.Name = "lblStatusEngine";
+            this.lblStatusEngine.Size = new System.Drawing.Size(38, 18);
+            this.lblStatusEngine.TabIndex = 1;
+            this.lblStatusEngine.Text = "OFF";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label3.Location = new System.Drawing.Point(16, 88);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(59, 15);
+            this.label3.TabIndex = 2;
+            this.label3.Text = "Encoder: ";
+            // 
+            // lblEncoderStatus
+            // 
+            this.lblEncoderStatus.AutoSize = true;
+            this.lblEncoderStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblEncoderStatus.Location = new System.Drawing.Point(98, 88);
+            this.lblEncoderStatus.Name = "lblEncoderStatus";
+            this.lblEncoderStatus.Size = new System.Drawing.Size(16, 18);
+            this.lblEncoderStatus.TabIndex = 3;
+            this.lblEncoderStatus.Text = "0";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1036, 518);
+            this.Controls.Add(this.gBoxenginestate);
             this.Controls.Add(this.gBoxengine);
             this.Controls.Add(this.btnExternalexe);
             this.Controls.Add(this.groupBox9);
             this.Controls.Add(this.groupBox8);
             this.Controls.Add(this.groupBox3);
-            this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
@@ -1011,11 +956,12 @@
             this.Load += new System.EventHandler(this.Form1_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
             this.groupBox7.ResumeLayout(false);
             this.groupBox7.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
+            this.groupBox14.ResumeLayout(false);
+            this.groupBox14.PerformLayout();
             this.groupBox13.ResumeLayout(false);
             this.groupBox13.PerformLayout();
             this.groupBox12.ResumeLayout(false);
@@ -1034,8 +980,8 @@
             this.menuStrip1.PerformLayout();
             this.groupBox9.ResumeLayout(false);
             this.gBoxengine.ResumeLayout(false);
-            this.groupBox14.ResumeLayout(false);
-            this.groupBox14.PerformLayout();
+            this.gBoxenginestate.ResumeLayout(false);
+            this.gBoxenginestate.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1044,16 +990,7 @@
         #endregion
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox CBoxParityBits;
-        private System.Windows.Forms.ComboBox CBoxStopBits;
-        private System.Windows.Forms.ComboBox CBoxDataBits;
         private System.Windows.Forms.ComboBox cBoxCOMPORT;
-        private System.Windows.Forms.ComboBox CBoxBaudRate;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.ProgressBar progressBar1;
         private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.Button btnOpen;
@@ -1122,6 +1059,11 @@
         private System.Windows.Forms.Button btnSetreps;
         private System.Windows.Forms.Button btnSetrange;
         private System.Windows.Forms.GroupBox groupBox14;
+        private System.Windows.Forms.GroupBox gBoxenginestate;
+        private System.Windows.Forms.Label lblStatusEngine;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lblEncoderStatus;
+        private System.Windows.Forms.Label label3;
     }
 }
 
