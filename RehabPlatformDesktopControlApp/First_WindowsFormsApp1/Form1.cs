@@ -92,6 +92,10 @@ namespace First_WindowsFormsApp1
             groupBox4.Enabled = false;
             // 2nd single mode groupbox is off at start
             groupBox14.Enabled = false;
+            //mode selection groupbox is off at start 
+            groupBox13.Enabled = false;
+            //lege selection is off at start
+            groupBox12.Enabled = false;
 
             chBoxDtrEnable.Checked = false;
             serialPort1.DtrEnable = false;
@@ -127,6 +131,7 @@ namespace First_WindowsFormsApp1
                 btnOpen.Enabled = false;
                 btnClose.Enabled = true;
                 lblStatusCom.Text = "ON";
+                groupBox12.Enabled = true;
             }
             
             catch (Exception err)
@@ -135,6 +140,7 @@ namespace First_WindowsFormsApp1
                 btnOpen.Enabled = true;
                 btnClose.Enabled = false;
                 lblStatusCom.Text = "OFF";
+                groupBox12.Enabled = false;
             }
 
         }
@@ -149,6 +155,11 @@ namespace First_WindowsFormsApp1
                 btnOpen.Enabled = true;
                 btnClose.Enabled = false;
                 lblStatusCom.Text = "OFF";
+                if(groupBox12.Enabled == true)
+                {
+                    groupBox12.Enabled = false;
+                }
+                
             }
         }
 
@@ -509,6 +520,14 @@ namespace First_WindowsFormsApp1
                 serialPort1.Write(dataOUT);
                 chboxLeftleg.Checked = false;
                 chboxRightleg.Checked = true;
+                groupBox13.Enabled = true;
+            }
+            else
+            {
+                groupBox13.Enabled = false;
+                groupBox4.Enabled = false;
+                groupBox14.Enabled = false;
+                groupBox11.Enabled = false;
             }
         }
 
@@ -521,6 +540,14 @@ namespace First_WindowsFormsApp1
                 serialPort1.Write(dataOUT);
                 chboxRightleg.Checked = false;
                 chboxLeftleg.Checked = true;
+                groupBox13.Enabled = true;
+            }
+            else
+            {
+                groupBox13.Enabled = false;
+                groupBox4.Enabled = false;
+                groupBox14.Enabled = false;
+                groupBox11.Enabled = false;
             }
         }
 
