@@ -105,6 +105,7 @@
             this.lblStatusEngine = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.lblEncoderStatus = new System.Windows.Forms.Label();
+            this.tBoxincoming = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.groupBox7.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -886,6 +887,7 @@
             // 
             // gBoxenginestate
             // 
+            this.gBoxenginestate.Controls.Add(this.tBoxincoming);
             this.gBoxenginestate.Controls.Add(this.lblEncoderStatus);
             this.gBoxenginestate.Controls.Add(this.label3);
             this.gBoxenginestate.Controls.Add(this.lblStatusEngine);
@@ -936,6 +938,13 @@
             this.lblEncoderStatus.Size = new System.Drawing.Size(16, 18);
             this.lblEncoderStatus.TabIndex = 3;
             this.lblEncoderStatus.Text = "0";
+            // 
+            // tBoxincoming
+            // 
+            this.tBoxincoming.Location = new System.Drawing.Point(47, 145);
+            this.tBoxincoming.Name = "tBoxincoming";
+            this.tBoxincoming.Size = new System.Drawing.Size(100, 20);
+            this.tBoxincoming.TabIndex = 4;
             // 
             // Form1
             // 
@@ -1064,6 +1073,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label lblEncoderStatus;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox tBoxincoming;
     }
 }
 

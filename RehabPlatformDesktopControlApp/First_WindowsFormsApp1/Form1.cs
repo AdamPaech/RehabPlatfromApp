@@ -27,6 +27,10 @@ namespace First_WindowsFormsApp1
         int sizeIN;
         char[] DataINChar = { 'a' };
 
+        //creating data bridge
+        public delegate void d1(string indata);
+        private static int counter = 0;
+        private static string sEncoderValue;
         public Form1()
         {
             InitializeComponent();
@@ -284,34 +288,67 @@ namespace First_WindowsFormsApp1
 
         private void serialPort1_DataReceived(object sender, SerialDataReceivedEventArgs e)
         {
+            //NEW SOLUTION
+            string indata = serialPort1.ReadLine();
+            d1 writeit = new d1(Write2Form);
+            Invoke(writeit, indata);
 
-            DataIN = serialPort1.ReadExisting();
-            this.Invoke(new EventHandler(ShowData));
+
+            //### HINDI SOLUTION
+            //DataIN = serialPort1.ReadExisting();
+            //this.Invoke(new EventHandler(ShowData));
         }
-
-        private void ShowData(object sender, EventArgs e)
+        
+        public void Write2Form(string indata)
         {
-            //int dataINLength = DataIN.Length;
-            //lblDataInLength.Text = String.Format("{0:00}", dataINLength);
-            //if (chBoxAlwaysUpdate.Checked)
-            //{
-            //    tBoxDataIN.Text = DataIN;
-            //}
-            //else if (chBoxAddToOldData.Checked)
-            //{
-            //    tBoxDataIN.Text += DataIN;
-            //}
-            if (DataIN != tBoxDataIN.Text)
+            //this function handles data sent from stm32
+            char firstchar;
+            Single numdata;
+            Single angle;
+            firstchar = indata[0];
+            //string incoming_mess = indata;
+            switch(firstchar)
             {
-                tBoxDataIN.Text = DataIN;
-            }
-            if(DataIN == "PIP")
-            {
-                lblStatusEngine.Text = "ON";
-
+                case 'p':
+                    counter++;
+                    tBoxincoming.Text = Convert.ToString(counter);
+                    break;
+                case 'e':
+                    //numdata = Convert.ToSingle(indata.Substring(1));
+                    //angle = numdata * 1;
+                    //sEncoderValue = sEncoderValue.Remove(0, 1);
+                    //tBoxincoming.Text = String.Format("{00:00}", angle);
+                    tBoxincoming.Text = indata.Substring(1);
+                    //counter++;
+                    //tBoxincoming.Text = Convert.ToString(counter);
+                    break;
 
             }
         }
+
+        //private void ShowData(object sender, EventArgs e)
+        //{
+        //    //int dataINLength = DataIN.Length;
+        //    //lblDataInLength.Text = String.Format("{0:00}", dataINLength);
+        //    //if (chBoxAlwaysUpdate.Checked)
+        //    //{
+        //    //    tBoxDataIN.Text = DataIN;
+        //    //}
+        //    //else if (chBoxAddToOldData.Checked)
+        //    //{
+        //    //    tBoxDataIN.Text += DataIN;
+        //    //}
+        //    if (DataIN != tBoxDataIN.Text)
+        //    {
+        //        tBoxDataIN.Text = DataIN;
+        //    }
+        //    if(DataIN == "PIP")
+        //    {
+        //        lblStatusEngine.Text = "ON";
+
+
+        //    }
+        //}
 
         private void chBoxAlwaysUpdate_CheckedChanged(object sender, EventArgs e)
         {
