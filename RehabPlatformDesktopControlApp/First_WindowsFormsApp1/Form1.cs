@@ -95,11 +95,17 @@ namespace First_WindowsFormsApp1
             //single mode groupbox is off at start
             groupBox4.Enabled = false;
             // 2nd single mode groupbox is off at start
-            groupBox14.Enabled = false;
+            //groupBox14.Enabled = false;
             //mode selection groupbox is off at start 
             groupBox13.Enabled = false;
             //lege selection is off at start
             groupBox12.Enabled = false;
+            //stop button is off at start
+            btnStop.Enabled = false;
+            //reset button is off at start
+            btnReset.Enabled = false;
+            //button RESET is unable at start
+            btnInitialize.Enabled = false;
 
             chBoxDtrEnable.Checked = false;
             serialPort1.DtrEnable = false;
@@ -143,7 +149,9 @@ namespace First_WindowsFormsApp1
                 btnOpen.Enabled = false;
                 btnClose.Enabled = true;
                 lblStatusCom.Text = "ON";
-                groupBox12.Enabled = true;
+                //enable INIT button
+                btnInitialize.Enabled = true;
+                //groupBox12.Enabled = true;
             }
             
             catch (Exception err)
@@ -167,7 +175,8 @@ namespace First_WindowsFormsApp1
                 btnOpen.Enabled = true;
                 btnClose.Enabled = false;
                 lblStatusCom.Text = "OFF";
-                if(groupBox12.Enabled == true)
+                btnInitialize.Enabled = false;
+                if (groupBox12.Enabled == true)
                 {
                     groupBox12.Enabled = false;
                 }
@@ -311,14 +320,14 @@ namespace First_WindowsFormsApp1
             {
                 case 'p':
                     counter++;
-                    tBoxincoming.Text = Convert.ToString(counter);
+                    //tBoxincoming.Text = Convert.ToString(counter);
                     break;
                 case 'e':
                     //numdata = Convert.ToSingle(indata.Substring(1));
                     //angle = numdata * 1;
                     //sEncoderValue = sEncoderValue.Remove(0, 1);
                     //tBoxincoming.Text = String.Format("{00:00}", angle);
-                    tBoxincoming.Text = indata.Substring(1);
+                    lblEncoderStatus.Text = indata.Substring(1);
                     //counter++;
                     //tBoxincoming.Text = Convert.ToString(counter);
                     break;
@@ -584,7 +593,7 @@ namespace First_WindowsFormsApp1
             {
                 groupBox13.Enabled = false;
                 groupBox4.Enabled = false;
-                groupBox14.Enabled = false;
+                //groupBox14.Enabled = false;
                 groupBox11.Enabled = false;
                 //unchecking mode checkboxes
                 if (chBoxserialmotion.Checked == true)
@@ -613,7 +622,7 @@ namespace First_WindowsFormsApp1
             {
                 groupBox13.Enabled = false;
                 groupBox4.Enabled = false;
-                groupBox14.Enabled = false;
+                //groupBox14.Enabled = false;
                 groupBox11.Enabled = false;
                 //unchecking mode checkboxes
                 if(chBoxserialmotion.Checked == true)
@@ -647,12 +656,16 @@ namespace First_WindowsFormsApp1
                 chBoxserialmotion.Checked = false;
                 chBoxsinglemode.Checked = true;
                 groupBox4.Enabled = true;
-                groupBox14.Enabled = true;
+                btnStop.Enabled = true;
+                btnReset.Enabled = true;
+                //groupBox14.Enabled = true;
             }
             else 
             { 
                 groupBox4.Enabled = false;
-                groupBox14.Enabled = false;
+                btnReset.Enabled = false;
+                btnStop.Enabled = false;
+                //groupBox14.Enabled = false;
             }
         }
 
@@ -666,8 +679,15 @@ namespace First_WindowsFormsApp1
                 chBoxsinglemode.Checked = false;
                 chBoxserialmotion.Checked = true;
                 groupBox11.Enabled = true;
+                btnStop.Enabled = true;
+                btnReset.Enabled = true;
             }
-            else { groupBox11.Enabled = false; }
+            else 
+            { 
+                groupBox11.Enabled = false;
+                btnStop.Enabled = false;
+                btnReset.Enabled = false;
+            }
         }
 
         private void btnInitialize_Click(object sender, EventArgs e)
@@ -676,6 +696,8 @@ namespace First_WindowsFormsApp1
             {
                 dataOUT = "INIT";
                 serialPort1.Write(dataOUT);
+                //lege selection is off at start
+                groupBox12.Enabled = true;
             }
         }
 
@@ -774,6 +796,15 @@ namespace First_WindowsFormsApp1
         private void groupBox7_Enter(object sender, EventArgs e)
         {
 
+        }
+
+        private void btn10_Click(object sender, EventArgs e)
+        {
+            if (serialPort1.IsOpen)
+            {
+                dataOUT = "060P";
+                serialPort1.Write(dataOUT);
+            }
         }
     }
 }
