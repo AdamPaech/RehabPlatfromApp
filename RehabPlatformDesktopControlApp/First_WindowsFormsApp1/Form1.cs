@@ -169,6 +169,33 @@ namespace First_WindowsFormsApp1
         {
             if(serialPort1.IsOpen)
             {
+                if (chBoxsinglemode.Checked = true)
+                {
+                    chBoxsinglemode.Checked = false;
+                }
+                else if (chBoxserialmotion.Checked == true)
+                {
+                    chBoxserialmotion.Checked = false;
+                }
+                //
+                if (chboxRightleg.Checked = true)
+                {
+                    chboxRightleg.Checked = false;
+                }
+                else if (chboxLeftleg.Checked == true)
+                {
+                    chboxLeftleg.Checked = false;
+                }
+                //
+                if (groupBox12.Enabled == true)
+                {
+                    groupBox12.Enabled = false;
+                }
+                if (groupBox13.Enabled = true)
+                {
+                    groupBox13.Enabled = false;
+                }
+                //
                 timer1.Stop();
                 serialPort1.Close();
                 progressBar1.Value = 0;
@@ -176,11 +203,9 @@ namespace First_WindowsFormsApp1
                 btnClose.Enabled = false;
                 lblStatusCom.Text = "OFF";
                 btnInitialize.Enabled = false;
-                if (groupBox12.Enabled == true)
-                {
-                    groupBox12.Enabled = false;
-                }
-                
+
+
+
             }
         }
 
@@ -213,7 +238,7 @@ namespace First_WindowsFormsApp1
         private void tBoxDataOut_TextChanged(object sender, EventArgs e)
         {
             int dataOUTLength = tBoxDataOut.TextLength;
-            lblDataOutLength.Text = String.Format("{0:00}", dataOUTLength);
+            //lblDataOutLength.Text = String.Format("{0:00}", dataOUTLength);
             if(chBoxUsingEnter.Checked)
             {
                 tBoxDataOut.Text = tBoxDataOut.Text.Replace(Environment.NewLine, "");
@@ -310,54 +335,44 @@ namespace First_WindowsFormsApp1
         
         public void Write2Form(string indata)
         {
-            //this function handles data sent from stm32
+            //this function handles data sent from stm32 and writes it to the form
             char firstchar;
             Single numdata;
             Single angle;
             firstchar = indata[0];
-            //string incoming_mess = indata;
-            switch(firstchar)
-            {
+            string firstfour = indata.Substring(0, 4);
+            Console.Write(firstfour);
+            Console.Write(indata);
+            switch (firstchar)
+            {   
                 case 'p':
                     counter++;
                     //tBoxincoming.Text = Convert.ToString(counter);
                     break;
+                //ENCODER VALUE
                 case 'e':
-                    //numdata = Convert.ToSingle(indata.Substring(1));
-                    //angle = numdata * 1;
-                    //sEncoderValue = sEncoderValue.Remove(0, 1);
-                    //tBoxincoming.Text = String.Format("{00:00}", angle);
                     lblEncoderStatus.Text = indata.Substring(1);
-                    //counter++;
-                    //tBoxincoming.Text = Convert.ToString(counter);
                     break;
+                //ENGINE STATE
+            }
 
+            //ENGINE STATE
+            switch (firstfour)
+            {
+                case "redy":
+                    lblStatusEngine.Text = "READY";
+                    break;
+                case "work":
+                    lblStatusEngine.Text = "MOTION IN PROGRESS...";
+                    break;
+                case "stop":
+                    lblStatusEngine.Text = "STOPPED";
+                    break;
+                case "inig":
+                    lblStatusEngine.Text = "INITIALIZING";
+                    break;
             }
         }
-
-        //private void ShowData(object sender, EventArgs e)
-        //{
-        //    //int dataINLength = DataIN.Length;
-        //    //lblDataInLength.Text = String.Format("{0:00}", dataINLength);
-        //    //if (chBoxAlwaysUpdate.Checked)
-        //    //{
-        //    //    tBoxDataIN.Text = DataIN;
-        //    //}
-        //    //else if (chBoxAddToOldData.Checked)
-        //    //{
-        //    //    tBoxDataIN.Text += DataIN;
-        //    //}
-        //    if (DataIN != tBoxDataIN.Text)
-        //    {
-        //        tBoxDataIN.Text = DataIN;
-        //    }
-        //    if(DataIN == "PIP")
-        //    {
-        //        lblStatusEngine.Text = "ON";
-
-
-        //    }
-        //}
 
         private void chBoxAlwaysUpdate_CheckedChanged(object sender, EventArgs e)
         {
@@ -705,7 +720,7 @@ namespace First_WindowsFormsApp1
         {
             if (serialPort1.IsOpen)
             {
-                dataOUT = "STOP";
+                dataOUT = "HALT";
                 serialPort1.Write(dataOUT);
             }
         }
@@ -803,6 +818,33 @@ namespace First_WindowsFormsApp1
             if (serialPort1.IsOpen)
             {
                 dataOUT = "060P";
+                serialPort1.Write(dataOUT);
+            }
+        }
+
+        private void btnContSingle_Click(object sender, EventArgs e)
+        {
+            if (serialPort1.IsOpen)
+            {
+                dataOUT = "CONT";
+                serialPort1.Write(dataOUT);
+            }
+        }
+
+        private void btnReset_Click(object sender, EventArgs e)
+        {
+            if (serialPort1.IsOpen)
+            {
+                dataOUT = "RSET";
+                serialPort1.Write(dataOUT);
+            }
+        }
+
+        private void btnContSerial_Click(object sender, EventArgs e)
+        {
+            if (serialPort1.IsOpen)
+            {
+                dataOUT = "CONT";
                 serialPort1.Write(dataOUT);
             }
         }

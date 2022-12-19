@@ -60,8 +60,6 @@
             this.tBoxnumberoreps = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.lblDataOutLength = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.btnSAFE = new System.Windows.Forms.Button();
@@ -80,7 +78,6 @@
             this.chBoxUsingButton = new System.Windows.Forms.CheckBox();
             this.groupBox8 = new System.Windows.Forms.GroupBox();
             this.lblDataInLength = new System.Windows.Forms.Label();
-            this.LblPotentiometer = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.chBoxAddToOldData = new System.Windows.Forms.CheckBox();
             this.chBoxAlwaysUpdate = new System.Windows.Forms.CheckBox();
@@ -104,6 +101,7 @@
             this.btnReset = new System.Windows.Forms.Button();
             this.btnContSingle = new System.Windows.Forms.Button();
             this.btn10 = new System.Windows.Forms.Button();
+            this.gBoxVisionApp = new System.Windows.Forms.GroupBox();
             this.groupBox1.SuspendLayout();
             this.groupBox7.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -118,6 +116,7 @@
             this.groupBox9.SuspendLayout();
             this.gBoxengine.SuspendLayout();
             this.gBoxenginestate.SuspendLayout();
+            this.gBoxVisionApp.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -254,7 +253,7 @@
             this.groupBox3.Controls.Add(this.label7);
             this.groupBox3.Location = new System.Drawing.Point(286, 112);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(426, 419);
+            this.groupBox3.Size = new System.Drawing.Size(426, 367);
             this.groupBox3.TabIndex = 6;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Manipulator Control";
@@ -394,6 +393,7 @@
             this.btnContSerial.TabIndex = 20;
             this.btnContSerial.Text = "CONTINUE";
             this.btnContSerial.UseVisualStyleBackColor = true;
+            this.btnContSerial.Click += new System.EventHandler(this.btnContSerial_Click);
             // 
             // btnStartserial
             // 
@@ -438,28 +438,6 @@
             this.label9.Size = new System.Drawing.Size(115, 15);
             this.label9.TabIndex = 0;
             this.label9.Text = "Range of motion [°]:";
-            // 
-            // lblDataOutLength
-            // 
-            this.lblDataOutLength.AutoSize = true;
-            this.lblDataOutLength.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lblDataOutLength.Location = new System.Drawing.Point(128, 486);
-            this.lblDataOutLength.Name = "lblDataOutLength";
-            this.lblDataOutLength.Size = new System.Drawing.Size(21, 15);
-            this.lblDataOutLength.TabIndex = 8;
-            this.lblDataOutLength.Text = "00";
-            this.lblDataOutLength.Click += new System.EventHandler(this.lblDataOutLength_Click);
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label6.Location = new System.Drawing.Point(17, 485);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(105, 15);
-            this.label6.TabIndex = 7;
-            this.label6.Text = "Data OUT Length:";
-            this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
             // label7
             // 
@@ -649,13 +627,12 @@
             // groupBox8
             // 
             this.groupBox8.Controls.Add(this.lblDataInLength);
-            this.groupBox8.Controls.Add(this.LblPotentiometer);
             this.groupBox8.Controls.Add(this.label8);
             this.groupBox8.Controls.Add(this.chBoxAddToOldData);
             this.groupBox8.Controls.Add(this.chBoxAlwaysUpdate);
             this.groupBox8.Controls.Add(this.btnClearDataIN);
             this.groupBox8.Controls.Add(this.tBoxDataIN);
-            this.groupBox8.Location = new System.Drawing.Point(751, 250);
+            this.groupBox8.Location = new System.Drawing.Point(718, 275);
             this.groupBox8.Name = "groupBox8";
             this.groupBox8.Size = new System.Drawing.Size(281, 256);
             this.groupBox8.TabIndex = 7;
@@ -672,17 +649,6 @@
             this.lblDataInLength.TabIndex = 11;
             this.lblDataInLength.Text = "X";
             this.lblDataInLength.Click += new System.EventHandler(this.lblDataInLength_Click);
-            // 
-            // LblPotentiometer
-            // 
-            this.LblPotentiometer.AutoSize = true;
-            this.LblPotentiometer.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.LblPotentiometer.Location = new System.Drawing.Point(36, 235);
-            this.LblPotentiometer.Name = "LblPotentiometer";
-            this.LblPotentiometer.Size = new System.Drawing.Size(148, 15);
-            this.LblPotentiometer.TabIndex = 9;
-            this.LblPotentiometer.Text = "Potentiometer Value : 000";
-            this.LblPotentiometer.Click += new System.EventHandler(this.label7_Click);
             // 
             // label8
             // 
@@ -779,20 +745,21 @@
             // 
             this.groupBox9.Controls.Add(this.groupBox5);
             this.groupBox9.Controls.Add(this.groupBox6);
-            this.groupBox9.Location = new System.Drawing.Point(6, 369);
+            this.groupBox9.Location = new System.Drawing.Point(5, 265);
             this.groupBox9.Name = "groupBox9";
-            this.groupBox9.Size = new System.Drawing.Size(261, 100);
+            this.groupBox9.Size = new System.Drawing.Size(275, 100);
             this.groupBox9.TabIndex = 10;
             this.groupBox9.TabStop = false;
             this.groupBox9.Text = "Sending data settings";
             // 
             // btnExternalexe
             // 
-            this.btnExternalexe.Location = new System.Drawing.Point(12, 279);
+            this.btnExternalexe.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnExternalexe.Location = new System.Drawing.Point(16, 28);
             this.btnExternalexe.Name = "btnExternalexe";
-            this.btnExternalexe.Size = new System.Drawing.Size(142, 79);
+            this.btnExternalexe.Size = new System.Drawing.Size(90, 53);
             this.btnExternalexe.TabIndex = 11;
-            this.btnExternalexe.Text = "START EXTERNAL EXE";
+            this.btnExternalexe.Text = "OPEN";
             this.btnExternalexe.UseVisualStyleBackColor = true;
             this.btnExternalexe.Click += new System.EventHandler(this.btnExternalexe_Click);
             // 
@@ -822,6 +789,7 @@
             // btnInitialize
             // 
             this.btnInitialize.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnInitialize.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnInitialize.Location = new System.Drawing.Point(29, 21);
             this.btnInitialize.Name = "btnInitialize";
             this.btnInitialize.Size = new System.Drawing.Size(100, 35);
@@ -836,28 +804,28 @@
             this.gBoxenginestate.Controls.Add(this.label3);
             this.gBoxenginestate.Controls.Add(this.lblStatusEngine);
             this.gBoxenginestate.Controls.Add(this.label2);
-            this.gBoxenginestate.Location = new System.Drawing.Point(751, 43);
+            this.gBoxenginestate.Location = new System.Drawing.Point(718, 43);
             this.gBoxenginestate.Name = "gBoxenginestate";
-            this.gBoxenginestate.Size = new System.Drawing.Size(279, 183);
+            this.gBoxenginestate.Size = new System.Drawing.Size(281, 173);
             this.gBoxenginestate.TabIndex = 13;
             this.gBoxenginestate.TabStop = false;
-            this.gBoxenginestate.Text = "Engine state";
+            this.gBoxenginestate.Text = "Engine status";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label2.Location = new System.Drawing.Point(15, 41);
+            this.label2.Location = new System.Drawing.Point(9, 41);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(87, 16);
+            this.label2.Size = new System.Drawing.Size(88, 16);
             this.label2.TabIndex = 0;
-            this.label2.Text = "Engine state: ";
+            this.label2.Text = "Actual status: ";
             // 
             // lblStatusEngine
             // 
             this.lblStatusEngine.AutoSize = true;
             this.lblStatusEngine.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lblStatusEngine.Location = new System.Drawing.Point(104, 41);
+            this.lblStatusEngine.Location = new System.Drawing.Point(98, 41);
             this.lblStatusEngine.Name = "lblStatusEngine";
             this.lblStatusEngine.Size = new System.Drawing.Size(38, 18);
             this.lblStatusEngine.TabIndex = 1;
@@ -867,7 +835,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label3.Location = new System.Drawing.Point(21, 88);
+            this.label3.Location = new System.Drawing.Point(15, 88);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(64, 16);
             this.label3.TabIndex = 2;
@@ -877,7 +845,7 @@
             // 
             this.lblEncoderStatus.AutoSize = true;
             this.lblEncoderStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lblEncoderStatus.Location = new System.Drawing.Point(102, 87);
+            this.lblEncoderStatus.Location = new System.Drawing.Point(96, 87);
             this.lblEncoderStatus.Name = "lblEncoderStatus";
             this.lblEncoderStatus.Size = new System.Drawing.Size(16, 18);
             this.lblEncoderStatus.TabIndex = 3;
@@ -892,6 +860,7 @@
             this.btnReset.TabIndex = 2;
             this.btnReset.Text = "RESET";
             this.btnReset.UseVisualStyleBackColor = true;
+            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
             // 
             // btnContSingle
             // 
@@ -902,6 +871,7 @@
             this.btnContSingle.TabIndex = 23;
             this.btnContSingle.Text = "CONTINUE";
             this.btnContSingle.UseVisualStyleBackColor = true;
+            this.btnContSingle.Click += new System.EventHandler(this.btnContSingle_Click);
             // 
             // btn10
             // 
@@ -914,22 +884,30 @@
             this.btn10.UseVisualStyleBackColor = true;
             this.btn10.Click += new System.EventHandler(this.btn10_Click);
             // 
+            // gBoxVisionApp
+            // 
+            this.gBoxVisionApp.Controls.Add(this.btnExternalexe);
+            this.gBoxVisionApp.Location = new System.Drawing.Point(5, 375);
+            this.gBoxVisionApp.Name = "gBoxVisionApp";
+            this.gBoxVisionApp.Size = new System.Drawing.Size(275, 100);
+            this.gBoxVisionApp.TabIndex = 14;
+            this.gBoxVisionApp.TabStop = false;
+            this.gBoxVisionApp.Text = "Knee Joint Vision Measurement App ";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1063, 587);
+            this.Controls.Add(this.gBoxVisionApp);
             this.Controls.Add(this.gBoxenginestate);
             this.Controls.Add(this.gBoxengine);
-            this.Controls.Add(this.btnExternalexe);
             this.Controls.Add(this.groupBox9);
-            this.Controls.Add(this.lblDataOutLength);
             this.Controls.Add(this.groupBox8);
-            this.Controls.Add(this.label6);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.menuStrip1);
-            this.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.MainMenuStrip = this.menuStrip1;
@@ -962,6 +940,7 @@
             this.gBoxengine.ResumeLayout(false);
             this.gBoxenginestate.ResumeLayout(false);
             this.gBoxenginestate.PerformLayout();
+            this.gBoxVisionApp.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -998,15 +977,12 @@
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
-        private System.Windows.Forms.Label LblPotentiometer;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button btn0;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.Button btnClearDataOut;
-        private System.Windows.Forms.Label lblDataOutLength;
         private System.Windows.Forms.Button btnSendData;
-        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button btn15;
         private System.Windows.Forms.Button btn90;
         private System.Windows.Forms.Button btn75;
@@ -1042,6 +1018,7 @@
         private System.Windows.Forms.Button btnReset;
         private System.Windows.Forms.Button btnContSingle;
         private System.Windows.Forms.Button btn10;
+        private System.Windows.Forms.GroupBox gBoxVisionApp;
     }
 }
 
