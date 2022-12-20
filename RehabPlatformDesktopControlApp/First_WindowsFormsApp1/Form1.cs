@@ -107,17 +107,12 @@ namespace First_WindowsFormsApp1
             //button RESET is unable at start
             btnInitialize.Enabled = false;
 
-            chBoxDtrEnable.Checked = false;
             serialPort1.DtrEnable = false;
-            chBoxRTSEnable.Checked = false;
             serialPort1.RtsEnable = false;
-            btnSendData.Enabled = false;
-            chBoxWriteLine.Checked = false;
-            chBoxWrite.Checked = true;
+            //btnSendData.Enabled = false;
             sendWith = "Write";
 
-            chBoxAddToOldData.Checked = true;
-            chBoxAlwaysUpdate.Checked = false;
+
         }
 
         private void groupBox1_Enter(object sender, EventArgs e)
@@ -211,20 +206,12 @@ namespace First_WindowsFormsApp1
 
         private void chBoxDtrEnable_CheckedChanged(object sender, EventArgs e)
         {
-            if(chBoxDtrEnable.Checked)
-            {
-                serialPort1.DtrEnable = true;
-            }
-            else { serialPort1.DtrEnable = false; }
+           
         }
 
         private void chBoxRTSEnable_CheckedChanged(object sender, EventArgs e)
         {
-            if(chBoxRTSEnable.Checked)
-            {
-                serialPort1.RtsEnable = true;
-            }
-            else { serialPort1.RtsEnable = false; }
+            
         }
 
         private void btnClearDataOut_Click(object sender, EventArgs e)
@@ -238,66 +225,35 @@ namespace First_WindowsFormsApp1
         private void tBoxDataOut_TextChanged(object sender, EventArgs e)
         {
             int dataOUTLength = tBoxDataOut.TextLength;
+            tBoxDataOut.Text = tBoxDataOut.Text.Replace(Environment.NewLine, "");
             //lblDataOutLength.Text = String.Format("{0:00}", dataOUTLength);
-            if(chBoxUsingEnter.Checked)
-            {
-                tBoxDataOut.Text = tBoxDataOut.Text.Replace(Environment.NewLine, "");
-            }
+            //if(chBoxUsingEnter.Checked)
+            //{
+            //    tBoxDataOut.Text = tBoxDataOut.Text.Replace(Environment.NewLine, "");
+            //}
         }
 
         private void chBoxUsingButton_CheckedChanged(object sender, EventArgs e)
         {
-            if(chBoxUsingButton.Checked)
-            {
-                btnSendData.Enabled = true;
-            }
-            else { btnSendData.Enabled = false; }
+         
         }
 
         private void tBoxDataOut_KeyDown(object sender, KeyEventArgs e)
         {
-            if(chBoxUsingEnter.Checked)
-            {
-                if(e.KeyCode == Keys.Enter)
-                {
-                    if (serialPort1.IsOpen)
-                    {
-                        dataOUT = tBoxDataOut.Text;
-                        if (sendWith == "WriteLine")
-                        {
-                            serialPort1.WriteLine(dataOUT);
-                        }
-                        else if (sendWith == "Write")
-                        {
-                            serialPort1.Write(dataOUT);
-                        }
-                    }
-                }
-            }
+            //if(e.KeyCode == Keys.Enter)
+            //{
+            //    tBoxDataOut.Text = tBoxDataOut.Text.Replace(Environment.NewLine, "");
+            //}
         }
 
         private void chBoxWriteLine_CheckedChanged(object sender, EventArgs e)
         {
-            if(chBoxWriteLine.Checked)
-            {
-                sendWith = "WriteLine";
-                chBoxWrite.Checked = false;
-                chBoxWriteLine.Checked = true;
-                //dataOUT = "LD2";
-                //serialPort1.Write(dataOUT);
-
-            }
 
         }
 
         private void chBoxWrite_CheckedChanged(object sender, EventArgs e)
         {
-            if(chBoxWrite.Checked)
-            {
-                sendWith = "Write";
-                chBoxWrite.Checked = true;
-                chBoxWriteLine.Checked = false;
-            }
+
         }
 
         private void cBoxCOMPORT_SelectedIndexChanged(object sender, EventArgs e)
@@ -376,36 +332,17 @@ namespace First_WindowsFormsApp1
 
         private void chBoxAlwaysUpdate_CheckedChanged(object sender, EventArgs e)
         {
-            if(chBoxAlwaysUpdate.Checked)
-            {
-                chBoxAlwaysUpdate.Checked = true;
-                chBoxAddToOldData.Checked = false;
-            }
-            else
-            {
-                chBoxAddToOldData.Checked = true;
-            }
+
         }
 
         private void chBoxAddToOldData_CheckedChanged(object sender, EventArgs e)
         {
-            if(chBoxAddToOldData.Checked)
-            {
-                chBoxAlwaysUpdate.Checked = false;
-                chBoxAddToOldData.Checked = true;
-            }
-            else
-            {
-                chBoxAlwaysUpdate.Checked = true;
-            }
+
         }
 
         private void btnClearDataIN_Click(object sender, EventArgs e)
         {
-            if(tBoxDataIN.Text != "")
-            {
-                tBoxDataIN.Text = "";
-            }
+
         }
 
         private void toolStripMenuItem1_Click(object sender, EventArgs e)
@@ -608,7 +545,6 @@ namespace First_WindowsFormsApp1
             {
                 groupBox13.Enabled = false;
                 groupBox4.Enabled = false;
-                //groupBox14.Enabled = false;
                 groupBox11.Enabled = false;
                 //unchecking mode checkboxes
                 if (chBoxserialmotion.Checked == true)
@@ -637,7 +573,6 @@ namespace First_WindowsFormsApp1
             {
                 groupBox13.Enabled = false;
                 groupBox4.Enabled = false;
-                //groupBox14.Enabled = false;
                 groupBox11.Enabled = false;
                 //unchecking mode checkboxes
                 if(chBoxserialmotion.Checked == true)
@@ -658,7 +593,7 @@ namespace First_WindowsFormsApp1
 
         private void btnExternalexe_Click(object sender, EventArgs e)
         {
-            Process.Start("Calc.exe"); //you can also give here a file path
+            Process.Start("D:\\KneeAngleMes_DEMO\\DEMO_V1.exe"); //you can give here a file path
         }
 
         private void chBoxsinglemode_CheckedChanged(object sender, EventArgs e)
@@ -673,14 +608,12 @@ namespace First_WindowsFormsApp1
                 groupBox4.Enabled = true;
                 btnStop.Enabled = true;
                 btnReset.Enabled = true;
-                //groupBox14.Enabled = true;
             }
             else 
             { 
                 groupBox4.Enabled = false;
                 btnReset.Enabled = false;
                 btnStop.Enabled = false;
-                //groupBox14.Enabled = false;
             }
         }
 
@@ -817,7 +750,7 @@ namespace First_WindowsFormsApp1
         {
             if (serialPort1.IsOpen)
             {
-                dataOUT = "060P";
+                dataOUT = "010P";
                 serialPort1.Write(dataOUT);
             }
         }
@@ -847,6 +780,11 @@ namespace First_WindowsFormsApp1
                 dataOUT = "CONT";
                 serialPort1.Write(dataOUT);
             }
+        }
+
+        private void chBoxUsingEnter_CheckedChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

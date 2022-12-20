@@ -31,26 +31,35 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.chBoxRTSEnable = new System.Windows.Forms.CheckBox();
-            this.chBoxDtrEnable = new System.Windows.Forms.CheckBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.cBoxCOMPORT = new System.Windows.Forms.ComboBox();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
             this.lblStatusCom = new System.Windows.Forms.Label();
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.btnClose = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.btnOpen = new System.Windows.Forms.Button();
+            this.cBoxCOMPORT = new System.Windows.Forms.ComboBox();
             this.tBoxDataOut = new System.Windows.Forms.TextBox();
             this.serialPort1 = new System.IO.Ports.SerialPort(this.components);
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.btnSendData = new System.Windows.Forms.Button();
-            this.btnClearDataOut = new System.Windows.Forms.Button();
             this.groupBox13 = new System.Windows.Forms.GroupBox();
             this.chBoxserialmotion = new System.Windows.Forms.CheckBox();
             this.chBoxsinglemode = new System.Windows.Forms.CheckBox();
             this.groupBox12 = new System.Windows.Forms.GroupBox();
             this.chboxLeftleg = new System.Windows.Forms.CheckBox();
             this.chboxRightleg = new System.Windows.Forms.CheckBox();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.btn10 = new System.Windows.Forms.Button();
+            this.btnContSingle = new System.Windows.Forms.Button();
+            this.btnClearDataOut = new System.Windows.Forms.Button();
+            this.btnSAFE = new System.Windows.Forms.Button();
+            this.btnSendData = new System.Windows.Forms.Button();
+            this.btn90 = new System.Windows.Forms.Button();
+            this.btn75 = new System.Windows.Forms.Button();
+            this.btn60 = new System.Windows.Forms.Button();
+            this.btn45 = new System.Windows.Forms.Button();
+            this.btn30 = new System.Windows.Forms.Button();
+            this.btn15 = new System.Windows.Forms.Button();
+            this.btn0 = new System.Windows.Forms.Button();
             this.groupBox11 = new System.Windows.Forms.GroupBox();
             this.btnSetrange = new System.Windows.Forms.Button();
             this.btnSetreps = new System.Windows.Forms.Button();
@@ -61,59 +70,30 @@
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.btnSAFE = new System.Windows.Forms.Button();
-            this.btn90 = new System.Windows.Forms.Button();
-            this.btn75 = new System.Windows.Forms.Button();
-            this.btn60 = new System.Windows.Forms.Button();
-            this.btn45 = new System.Windows.Forms.Button();
-            this.btn30 = new System.Windows.Forms.Button();
-            this.btn15 = new System.Windows.Forms.Button();
-            this.btn0 = new System.Windows.Forms.Button();
-            this.groupBox6 = new System.Windows.Forms.GroupBox();
-            this.chBoxWrite = new System.Windows.Forms.CheckBox();
-            this.chBoxWriteLine = new System.Windows.Forms.CheckBox();
-            this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.chBoxUsingEnter = new System.Windows.Forms.CheckBox();
-            this.chBoxUsingButton = new System.Windows.Forms.CheckBox();
-            this.groupBox8 = new System.Windows.Forms.GroupBox();
-            this.lblDataInLength = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.chBoxAddToOldData = new System.Windows.Forms.CheckBox();
-            this.chBoxAlwaysUpdate = new System.Windows.Forms.CheckBox();
-            this.btnClearDataIN = new System.Windows.Forms.Button();
-            this.tBoxDataIN = new System.Windows.Forms.TextBox();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.groupBox9 = new System.Windows.Forms.GroupBox();
             this.btnExternalexe = new System.Windows.Forms.Button();
             this.gBoxengine = new System.Windows.Forms.GroupBox();
+            this.btnReset = new System.Windows.Forms.Button();
             this.btnStop = new System.Windows.Forms.Button();
             this.btnInitialize = new System.Windows.Forms.Button();
             this.gBoxenginestate = new System.Windows.Forms.GroupBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.lblStatusEngine = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.lblEncoderStatus = new System.Windows.Forms.Label();
-            this.btnReset = new System.Windows.Forms.Button();
-            this.btnContSingle = new System.Windows.Forms.Button();
-            this.btn10 = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.lblStatusEngine = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.gBoxVisionApp = new System.Windows.Forms.GroupBox();
             this.groupBox1.SuspendLayout();
             this.groupBox7.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox13.SuspendLayout();
             this.groupBox12.SuspendLayout();
-            this.groupBox11.SuspendLayout();
             this.groupBox4.SuspendLayout();
-            this.groupBox6.SuspendLayout();
-            this.groupBox5.SuspendLayout();
-            this.groupBox8.SuspendLayout();
+            this.groupBox11.SuspendLayout();
             this.menuStrip1.SuspendLayout();
-            this.groupBox9.SuspendLayout();
             this.gBoxengine.SuspendLayout();
             this.gBoxenginestate.SuspendLayout();
             this.gBoxVisionApp.SuspendLayout();
@@ -122,63 +102,18 @@
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.groupBox7);
-            this.groupBox1.Controls.Add(this.chBoxRTSEnable);
             this.groupBox1.Controls.Add(this.progressBar1);
-            this.groupBox1.Controls.Add(this.chBoxDtrEnable);
             this.groupBox1.Controls.Add(this.btnClose);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.btnOpen);
             this.groupBox1.Controls.Add(this.cBoxCOMPORT);
             this.groupBox1.Location = new System.Drawing.Point(5, 43);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(275, 216);
+            this.groupBox1.Size = new System.Drawing.Size(300, 161);
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Com Port Control";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
-            // 
-            // chBoxRTSEnable
-            // 
-            this.chBoxRTSEnable.AutoSize = true;
-            this.chBoxRTSEnable.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.chBoxRTSEnable.Location = new System.Drawing.Point(131, 177);
-            this.chBoxRTSEnable.Name = "chBoxRTSEnable";
-            this.chBoxRTSEnable.Size = new System.Drawing.Size(89, 17);
-            this.chBoxRTSEnable.TabIndex = 15;
-            this.chBoxRTSEnable.Text = "RTS ENABLE";
-            this.chBoxRTSEnable.UseVisualStyleBackColor = true;
-            this.chBoxRTSEnable.CheckedChanged += new System.EventHandler(this.chBoxRTSEnable_CheckedChanged);
-            // 
-            // chBoxDtrEnable
-            // 
-            this.chBoxDtrEnable.AutoSize = true;
-            this.chBoxDtrEnable.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.chBoxDtrEnable.Location = new System.Drawing.Point(27, 177);
-            this.chBoxDtrEnable.Name = "chBoxDtrEnable";
-            this.chBoxDtrEnable.Size = new System.Drawing.Size(90, 17);
-            this.chBoxDtrEnable.TabIndex = 14;
-            this.chBoxDtrEnable.Text = "DTR ENABLE";
-            this.chBoxDtrEnable.UseVisualStyleBackColor = true;
-            this.chBoxDtrEnable.CheckedChanged += new System.EventHandler(this.chBoxDtrEnable_CheckedChanged);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(23, 26);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(64, 13);
-            this.label1.TabIndex = 9;
-            this.label1.Text = "COM PORT";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
-            // 
-            // cBoxCOMPORT
-            // 
-            this.cBoxCOMPORT.FormattingEnabled = true;
-            this.cBoxCOMPORT.Location = new System.Drawing.Point(118, 23);
-            this.cBoxCOMPORT.Name = "cBoxCOMPORT";
-            this.cBoxCOMPORT.Size = new System.Drawing.Size(115, 21);
-            this.cBoxCOMPORT.TabIndex = 6;
-            this.cBoxCOMPORT.SelectedIndexChanged += new System.EventHandler(this.cBoxCOMPORT_SelectedIndexChanged);
             // 
             // groupBox7
             // 
@@ -219,6 +154,16 @@
             this.btnClose.UseVisualStyleBackColor = true;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(23, 26);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(64, 13);
+            this.label1.TabIndex = 9;
+            this.label1.Text = "COM PORT";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
+            // 
             // btnOpen
             // 
             this.btnOpen.Location = new System.Drawing.Point(9, 66);
@@ -228,6 +173,15 @@
             this.btnOpen.Text = "OPEN";
             this.btnOpen.UseVisualStyleBackColor = true;
             this.btnOpen.Click += new System.EventHandler(this.btnOpen_Click);
+            // 
+            // cBoxCOMPORT
+            // 
+            this.cBoxCOMPORT.FormattingEnabled = true;
+            this.cBoxCOMPORT.Location = new System.Drawing.Point(118, 23);
+            this.cBoxCOMPORT.Name = "cBoxCOMPORT";
+            this.cBoxCOMPORT.Size = new System.Drawing.Size(115, 21);
+            this.cBoxCOMPORT.TabIndex = 6;
+            this.cBoxCOMPORT.SelectedIndexChanged += new System.EventHandler(this.cBoxCOMPORT_SelectedIndexChanged);
             // 
             // tBoxDataOut
             // 
@@ -251,33 +205,13 @@
             this.groupBox3.Controls.Add(this.groupBox4);
             this.groupBox3.Controls.Add(this.groupBox11);
             this.groupBox3.Controls.Add(this.label7);
-            this.groupBox3.Location = new System.Drawing.Point(286, 112);
+            this.groupBox3.Location = new System.Drawing.Point(311, 112);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(426, 367);
             this.groupBox3.TabIndex = 6;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Manipulator Control";
             this.groupBox3.Enter += new System.EventHandler(this.groupBox3_Enter);
-            // 
-            // btnSendData
-            // 
-            this.btnSendData.Location = new System.Drawing.Point(9, 47);
-            this.btnSendData.Name = "btnSendData";
-            this.btnSendData.Size = new System.Drawing.Size(75, 28);
-            this.btnSendData.TabIndex = 2;
-            this.btnSendData.Text = "SEND";
-            this.btnSendData.UseVisualStyleBackColor = true;
-            this.btnSendData.Click += new System.EventHandler(this.btnSendData_Click);
-            // 
-            // btnClearDataOut
-            // 
-            this.btnClearDataOut.Location = new System.Drawing.Point(9, 80);
-            this.btnClearDataOut.Name = "btnClearDataOut";
-            this.btnClearDataOut.Size = new System.Drawing.Size(75, 28);
-            this.btnClearDataOut.TabIndex = 6;
-            this.btnClearDataOut.Text = "CLEAR";
-            this.btnClearDataOut.UseVisualStyleBackColor = true;
-            this.btnClearDataOut.Click += new System.EventHandler(this.btnClearDataOut_Click);
             // 
             // groupBox13
             // 
@@ -346,6 +280,157 @@
             this.chboxRightleg.Text = "Right";
             this.chboxRightleg.UseVisualStyleBackColor = true;
             this.chboxRightleg.CheckedChanged += new System.EventHandler(this.chboxRightleg_CheckedChanged);
+            // 
+            // groupBox4
+            // 
+            this.groupBox4.Controls.Add(this.btn10);
+            this.groupBox4.Controls.Add(this.btnContSingle);
+            this.groupBox4.Controls.Add(this.btnClearDataOut);
+            this.groupBox4.Controls.Add(this.btnSAFE);
+            this.groupBox4.Controls.Add(this.btnSendData);
+            this.groupBox4.Controls.Add(this.tBoxDataOut);
+            this.groupBox4.Controls.Add(this.btn90);
+            this.groupBox4.Controls.Add(this.btn75);
+            this.groupBox4.Controls.Add(this.btn60);
+            this.groupBox4.Controls.Add(this.btn45);
+            this.groupBox4.Controls.Add(this.btn30);
+            this.groupBox4.Controls.Add(this.btn15);
+            this.groupBox4.Controls.Add(this.btn0);
+            this.groupBox4.Location = new System.Drawing.Point(14, 105);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(396, 117);
+            this.groupBox4.TabIndex = 7;
+            this.groupBox4.TabStop = false;
+            // 
+            // btn10
+            // 
+            this.btn10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btn10.Location = new System.Drawing.Point(174, 13);
+            this.btn10.Name = "btn10";
+            this.btn10.Size = new System.Drawing.Size(60, 28);
+            this.btn10.TabIndex = 24;
+            this.btn10.Text = "10";
+            this.btn10.UseVisualStyleBackColor = true;
+            this.btn10.Click += new System.EventHandler(this.btn10_Click);
+            // 
+            // btnContSingle
+            // 
+            this.btnContSingle.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnContSingle.Location = new System.Drawing.Point(98, 80);
+            this.btnContSingle.Name = "btnContSingle";
+            this.btnContSingle.Size = new System.Drawing.Size(137, 28);
+            this.btnContSingle.TabIndex = 23;
+            this.btnContSingle.Text = "CONTINUE";
+            this.btnContSingle.UseVisualStyleBackColor = true;
+            this.btnContSingle.Click += new System.EventHandler(this.btnContSingle_Click);
+            // 
+            // btnClearDataOut
+            // 
+            this.btnClearDataOut.Location = new System.Drawing.Point(9, 80);
+            this.btnClearDataOut.Name = "btnClearDataOut";
+            this.btnClearDataOut.Size = new System.Drawing.Size(75, 28);
+            this.btnClearDataOut.TabIndex = 6;
+            this.btnClearDataOut.Text = "CLEAR";
+            this.btnClearDataOut.UseVisualStyleBackColor = true;
+            this.btnClearDataOut.Click += new System.EventHandler(this.btnClearDataOut_Click);
+            // 
+            // btnSAFE
+            // 
+            this.btnSAFE.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnSAFE.Location = new System.Drawing.Point(250, 80);
+            this.btnSAFE.Name = "btnSAFE";
+            this.btnSAFE.Size = new System.Drawing.Size(136, 28);
+            this.btnSAFE.TabIndex = 22;
+            this.btnSAFE.Text = "SAFE";
+            this.btnSAFE.UseVisualStyleBackColor = true;
+            this.btnSAFE.Click += new System.EventHandler(this.btnSAFE_Click);
+            // 
+            // btnSendData
+            // 
+            this.btnSendData.Location = new System.Drawing.Point(9, 47);
+            this.btnSendData.Name = "btnSendData";
+            this.btnSendData.Size = new System.Drawing.Size(75, 28);
+            this.btnSendData.TabIndex = 2;
+            this.btnSendData.Text = "SEND";
+            this.btnSendData.UseVisualStyleBackColor = true;
+            this.btnSendData.Click += new System.EventHandler(this.btnSendData_Click);
+            // 
+            // btn90
+            // 
+            this.btn90.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btn90.Location = new System.Drawing.Point(326, 47);
+            this.btn90.Name = "btn90";
+            this.btn90.Size = new System.Drawing.Size(60, 28);
+            this.btn90.TabIndex = 20;
+            this.btn90.Text = "90";
+            this.btn90.UseVisualStyleBackColor = true;
+            this.btn90.Click += new System.EventHandler(this.btn90_Click);
+            // 
+            // btn75
+            // 
+            this.btn75.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btn75.Location = new System.Drawing.Point(250, 46);
+            this.btn75.Name = "btn75";
+            this.btn75.Size = new System.Drawing.Size(60, 28);
+            this.btn75.TabIndex = 19;
+            this.btn75.Text = "75";
+            this.btn75.UseVisualStyleBackColor = true;
+            this.btn75.Click += new System.EventHandler(this.btn75_Click);
+            // 
+            // btn60
+            // 
+            this.btn60.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btn60.Location = new System.Drawing.Point(174, 47);
+            this.btn60.Name = "btn60";
+            this.btn60.Size = new System.Drawing.Size(60, 28);
+            this.btn60.TabIndex = 18;
+            this.btn60.Text = "60";
+            this.btn60.UseVisualStyleBackColor = true;
+            this.btn60.Click += new System.EventHandler(this.btn60_Click);
+            // 
+            // btn45
+            // 
+            this.btn45.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btn45.Location = new System.Drawing.Point(98, 47);
+            this.btn45.Name = "btn45";
+            this.btn45.Size = new System.Drawing.Size(60, 28);
+            this.btn45.TabIndex = 17;
+            this.btn45.Text = "45";
+            this.btn45.UseVisualStyleBackColor = true;
+            this.btn45.Click += new System.EventHandler(this.btn45_Click);
+            // 
+            // btn30
+            // 
+            this.btn30.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btn30.Location = new System.Drawing.Point(326, 13);
+            this.btn30.Name = "btn30";
+            this.btn30.Size = new System.Drawing.Size(60, 28);
+            this.btn30.TabIndex = 16;
+            this.btn30.Text = "30";
+            this.btn30.UseVisualStyleBackColor = true;
+            this.btn30.Click += new System.EventHandler(this.btn30_Click);
+            // 
+            // btn15
+            // 
+            this.btn15.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btn15.Location = new System.Drawing.Point(250, 13);
+            this.btn15.Name = "btn15";
+            this.btn15.Size = new System.Drawing.Size(60, 28);
+            this.btn15.TabIndex = 15;
+            this.btn15.Text = "15";
+            this.btn15.UseVisualStyleBackColor = true;
+            this.btn15.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // btn0
+            // 
+            this.btn0.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btn0.Location = new System.Drawing.Point(98, 13);
+            this.btn0.Name = "btn0";
+            this.btn0.Size = new System.Drawing.Size(60, 28);
+            this.btn0.TabIndex = 14;
+            this.btn0.Text = "0";
+            this.btn0.UseVisualStyleBackColor = true;
+            this.btn0.Click += new System.EventHandler(this.button1_Click);
             // 
             // groupBox11
             // 
@@ -450,261 +535,10 @@
             this.label7.Text = "Set position [°]";
             this.label7.Click += new System.EventHandler(this.label7_Click_1);
             // 
-            // groupBox4
-            // 
-            this.groupBox4.Controls.Add(this.btn10);
-            this.groupBox4.Controls.Add(this.btnContSingle);
-            this.groupBox4.Controls.Add(this.btnClearDataOut);
-            this.groupBox4.Controls.Add(this.btnSAFE);
-            this.groupBox4.Controls.Add(this.btnSendData);
-            this.groupBox4.Controls.Add(this.tBoxDataOut);
-            this.groupBox4.Controls.Add(this.btn90);
-            this.groupBox4.Controls.Add(this.btn75);
-            this.groupBox4.Controls.Add(this.btn60);
-            this.groupBox4.Controls.Add(this.btn45);
-            this.groupBox4.Controls.Add(this.btn30);
-            this.groupBox4.Controls.Add(this.btn15);
-            this.groupBox4.Controls.Add(this.btn0);
-            this.groupBox4.Location = new System.Drawing.Point(14, 105);
-            this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(396, 117);
-            this.groupBox4.TabIndex = 7;
-            this.groupBox4.TabStop = false;
-            // 
-            // btnSAFE
-            // 
-            this.btnSAFE.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnSAFE.Location = new System.Drawing.Point(250, 80);
-            this.btnSAFE.Name = "btnSAFE";
-            this.btnSAFE.Size = new System.Drawing.Size(136, 28);
-            this.btnSAFE.TabIndex = 22;
-            this.btnSAFE.Text = "SAFE";
-            this.btnSAFE.UseVisualStyleBackColor = true;
-            this.btnSAFE.Click += new System.EventHandler(this.btnSAFE_Click);
-            // 
-            // btn90
-            // 
-            this.btn90.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btn90.Location = new System.Drawing.Point(326, 47);
-            this.btn90.Name = "btn90";
-            this.btn90.Size = new System.Drawing.Size(60, 28);
-            this.btn90.TabIndex = 20;
-            this.btn90.Text = "90";
-            this.btn90.UseVisualStyleBackColor = true;
-            this.btn90.Click += new System.EventHandler(this.btn90_Click);
-            // 
-            // btn75
-            // 
-            this.btn75.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btn75.Location = new System.Drawing.Point(250, 46);
-            this.btn75.Name = "btn75";
-            this.btn75.Size = new System.Drawing.Size(60, 28);
-            this.btn75.TabIndex = 19;
-            this.btn75.Text = "75";
-            this.btn75.UseVisualStyleBackColor = true;
-            this.btn75.Click += new System.EventHandler(this.btn75_Click);
-            // 
-            // btn60
-            // 
-            this.btn60.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btn60.Location = new System.Drawing.Point(174, 47);
-            this.btn60.Name = "btn60";
-            this.btn60.Size = new System.Drawing.Size(60, 28);
-            this.btn60.TabIndex = 18;
-            this.btn60.Text = "60";
-            this.btn60.UseVisualStyleBackColor = true;
-            this.btn60.Click += new System.EventHandler(this.btn60_Click);
-            // 
-            // btn45
-            // 
-            this.btn45.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btn45.Location = new System.Drawing.Point(98, 47);
-            this.btn45.Name = "btn45";
-            this.btn45.Size = new System.Drawing.Size(60, 28);
-            this.btn45.TabIndex = 17;
-            this.btn45.Text = "45";
-            this.btn45.UseVisualStyleBackColor = true;
-            this.btn45.Click += new System.EventHandler(this.btn45_Click);
-            // 
-            // btn30
-            // 
-            this.btn30.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btn30.Location = new System.Drawing.Point(326, 13);
-            this.btn30.Name = "btn30";
-            this.btn30.Size = new System.Drawing.Size(60, 28);
-            this.btn30.TabIndex = 16;
-            this.btn30.Text = "30";
-            this.btn30.UseVisualStyleBackColor = true;
-            this.btn30.Click += new System.EventHandler(this.btn30_Click);
-            // 
-            // btn15
-            // 
-            this.btn15.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btn15.Location = new System.Drawing.Point(250, 13);
-            this.btn15.Name = "btn15";
-            this.btn15.Size = new System.Drawing.Size(60, 28);
-            this.btn15.TabIndex = 15;
-            this.btn15.Text = "15";
-            this.btn15.UseVisualStyleBackColor = true;
-            this.btn15.Click += new System.EventHandler(this.button3_Click);
-            // 
-            // btn0
-            // 
-            this.btn0.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btn0.Location = new System.Drawing.Point(98, 13);
-            this.btn0.Name = "btn0";
-            this.btn0.Size = new System.Drawing.Size(60, 28);
-            this.btn0.TabIndex = 14;
-            this.btn0.Text = "0";
-            this.btn0.UseVisualStyleBackColor = true;
-            this.btn0.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // groupBox6
-            // 
-            this.groupBox6.Controls.Add(this.chBoxWrite);
-            this.groupBox6.Controls.Add(this.chBoxWriteLine);
-            this.groupBox6.Location = new System.Drawing.Point(148, 19);
-            this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(84, 68);
-            this.groupBox6.TabIndex = 8;
-            this.groupBox6.TabStop = false;
-            this.groupBox6.Text = "todo";
-            // 
-            // chBoxWrite
-            // 
-            this.chBoxWrite.AutoSize = true;
-            this.chBoxWrite.Location = new System.Drawing.Point(7, 41);
-            this.chBoxWrite.Name = "chBoxWrite";
-            this.chBoxWrite.Size = new System.Drawing.Size(51, 17);
-            this.chBoxWrite.TabIndex = 1;
-            this.chBoxWrite.Text = "Write";
-            this.chBoxWrite.UseVisualStyleBackColor = true;
-            this.chBoxWrite.CheckedChanged += new System.EventHandler(this.chBoxWrite_CheckedChanged);
-            // 
-            // chBoxWriteLine
-            // 
-            this.chBoxWriteLine.AutoSize = true;
-            this.chBoxWriteLine.Location = new System.Drawing.Point(7, 18);
-            this.chBoxWriteLine.Name = "chBoxWriteLine";
-            this.chBoxWriteLine.Size = new System.Drawing.Size(71, 17);
-            this.chBoxWriteLine.TabIndex = 0;
-            this.chBoxWriteLine.Text = "WriteLine";
-            this.chBoxWriteLine.UseVisualStyleBackColor = true;
-            this.chBoxWriteLine.CheckedChanged += new System.EventHandler(this.chBoxWriteLine_CheckedChanged);
-            // 
-            // groupBox5
-            // 
-            this.groupBox5.Controls.Add(this.chBoxUsingEnter);
-            this.groupBox5.Controls.Add(this.chBoxUsingButton);
-            this.groupBox5.Location = new System.Drawing.Point(6, 19);
-            this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(103, 68);
-            this.groupBox5.TabIndex = 7;
-            this.groupBox5.TabStop = false;
-            this.groupBox5.Text = "Sending mode";
-            // 
-            // chBoxUsingEnter
-            // 
-            this.chBoxUsingEnter.AutoSize = true;
-            this.chBoxUsingEnter.Location = new System.Drawing.Point(6, 40);
-            this.chBoxUsingEnter.Name = "chBoxUsingEnter";
-            this.chBoxUsingEnter.Size = new System.Drawing.Size(81, 17);
-            this.chBoxUsingEnter.TabIndex = 1;
-            this.chBoxUsingEnter.Text = "Using Enter";
-            this.chBoxUsingEnter.UseVisualStyleBackColor = true;
-            // 
-            // chBoxUsingButton
-            // 
-            this.chBoxUsingButton.AutoSize = true;
-            this.chBoxUsingButton.Location = new System.Drawing.Point(6, 17);
-            this.chBoxUsingButton.Name = "chBoxUsingButton";
-            this.chBoxUsingButton.Size = new System.Drawing.Size(87, 17);
-            this.chBoxUsingButton.TabIndex = 0;
-            this.chBoxUsingButton.Text = "Using Button";
-            this.chBoxUsingButton.UseVisualStyleBackColor = true;
-            this.chBoxUsingButton.CheckedChanged += new System.EventHandler(this.chBoxUsingButton_CheckedChanged);
-            // 
-            // groupBox8
-            // 
-            this.groupBox8.Controls.Add(this.lblDataInLength);
-            this.groupBox8.Controls.Add(this.label8);
-            this.groupBox8.Controls.Add(this.chBoxAddToOldData);
-            this.groupBox8.Controls.Add(this.chBoxAlwaysUpdate);
-            this.groupBox8.Controls.Add(this.btnClearDataIN);
-            this.groupBox8.Controls.Add(this.tBoxDataIN);
-            this.groupBox8.Location = new System.Drawing.Point(718, 275);
-            this.groupBox8.Name = "groupBox8";
-            this.groupBox8.Size = new System.Drawing.Size(281, 256);
-            this.groupBox8.TabIndex = 7;
-            this.groupBox8.TabStop = false;
-            this.groupBox8.Text = "Receiver Control";
-            // 
-            // lblDataInLength
-            // 
-            this.lblDataInLength.AutoSize = true;
-            this.lblDataInLength.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lblDataInLength.Location = new System.Drawing.Point(169, 189);
-            this.lblDataInLength.Name = "lblDataInLength";
-            this.lblDataInLength.Size = new System.Drawing.Size(15, 15);
-            this.lblDataInLength.TabIndex = 11;
-            this.lblDataInLength.Text = "X";
-            this.lblDataInLength.Click += new System.EventHandler(this.lblDataInLength_Click);
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label8.Location = new System.Drawing.Point(58, 189);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(105, 15);
-            this.label8.TabIndex = 10;
-            this.label8.Text = "Data OUT Length:";
-            this.label8.Click += new System.EventHandler(this.label8_Click);
-            // 
-            // chBoxAddToOldData
-            // 
-            this.chBoxAddToOldData.AutoSize = true;
-            this.chBoxAddToOldData.Location = new System.Drawing.Point(124, 163);
-            this.chBoxAddToOldData.Name = "chBoxAddToOldData";
-            this.chBoxAddToOldData.Size = new System.Drawing.Size(106, 17);
-            this.chBoxAddToOldData.TabIndex = 9;
-            this.chBoxAddToOldData.Text = "Add To Old Data";
-            this.chBoxAddToOldData.UseVisualStyleBackColor = true;
-            this.chBoxAddToOldData.CheckedChanged += new System.EventHandler(this.chBoxAddToOldData_CheckedChanged);
-            // 
-            // chBoxAlwaysUpdate
-            // 
-            this.chBoxAlwaysUpdate.AutoSize = true;
-            this.chBoxAlwaysUpdate.Location = new System.Drawing.Point(124, 135);
-            this.chBoxAlwaysUpdate.Name = "chBoxAlwaysUpdate";
-            this.chBoxAlwaysUpdate.Size = new System.Drawing.Size(97, 17);
-            this.chBoxAlwaysUpdate.TabIndex = 8;
-            this.chBoxAlwaysUpdate.Text = "Always Update";
-            this.chBoxAlwaysUpdate.UseVisualStyleBackColor = true;
-            this.chBoxAlwaysUpdate.CheckedChanged += new System.EventHandler(this.chBoxAlwaysUpdate_CheckedChanged);
-            // 
-            // btnClearDataIN
-            // 
-            this.btnClearDataIN.Location = new System.Drawing.Point(15, 138);
-            this.btnClearDataIN.Name = "btnClearDataIN";
-            this.btnClearDataIN.Size = new System.Drawing.Size(84, 39);
-            this.btnClearDataIN.TabIndex = 7;
-            this.btnClearDataIN.Text = "Clear Data IN";
-            this.btnClearDataIN.UseVisualStyleBackColor = true;
-            this.btnClearDataIN.Click += new System.EventHandler(this.btnClearDataIN_Click);
-            // 
-            // tBoxDataIN
-            // 
-            this.tBoxDataIN.Location = new System.Drawing.Point(15, 19);
-            this.tBoxDataIN.Multiline = true;
-            this.tBoxDataIN.Name = "tBoxDataIN";
-            this.tBoxDataIN.Size = new System.Drawing.Size(224, 108);
-            this.tBoxDataIN.TabIndex = 6;
-            this.tBoxDataIN.TextChanged += new System.EventHandler(this.tBoxDataIN_TextChanged);
-            // 
             // menuStrip1
             // 
             this.menuStrip1.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileToolStripMenuItem,
             this.aboutToolStripMenuItem});
@@ -741,23 +575,12 @@
             // 
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // groupBox9
-            // 
-            this.groupBox9.Controls.Add(this.groupBox5);
-            this.groupBox9.Controls.Add(this.groupBox6);
-            this.groupBox9.Location = new System.Drawing.Point(5, 265);
-            this.groupBox9.Name = "groupBox9";
-            this.groupBox9.Size = new System.Drawing.Size(275, 100);
-            this.groupBox9.TabIndex = 10;
-            this.groupBox9.TabStop = false;
-            this.groupBox9.Text = "Sending data settings";
-            // 
             // btnExternalexe
             // 
             this.btnExternalexe.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnExternalexe.Location = new System.Drawing.Point(16, 28);
+            this.btnExternalexe.Location = new System.Drawing.Point(81, 28);
             this.btnExternalexe.Name = "btnExternalexe";
-            this.btnExternalexe.Size = new System.Drawing.Size(90, 53);
+            this.btnExternalexe.Size = new System.Drawing.Size(118, 48);
             this.btnExternalexe.TabIndex = 11;
             this.btnExternalexe.Text = "OPEN";
             this.btnExternalexe.UseVisualStyleBackColor = true;
@@ -768,12 +591,23 @@
             this.gBoxengine.Controls.Add(this.btnReset);
             this.gBoxengine.Controls.Add(this.btnStop);
             this.gBoxengine.Controls.Add(this.btnInitialize);
-            this.gBoxengine.Location = new System.Drawing.Point(286, 43);
+            this.gBoxengine.Location = new System.Drawing.Point(311, 43);
             this.gBoxengine.Name = "gBoxengine";
             this.gBoxengine.Size = new System.Drawing.Size(426, 68);
             this.gBoxengine.TabIndex = 12;
             this.gBoxengine.TabStop = false;
-            this.gBoxengine.Text = "Engine control";
+            this.gBoxengine.Text = "Motor control";
+            // 
+            // btnReset
+            // 
+            this.btnReset.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnReset.Location = new System.Drawing.Point(296, 21);
+            this.btnReset.Name = "btnReset";
+            this.btnReset.Size = new System.Drawing.Size(100, 35);
+            this.btnReset.TabIndex = 2;
+            this.btnReset.Text = "RESET";
+            this.btnReset.UseVisualStyleBackColor = true;
+            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
             // 
             // btnStop
             // 
@@ -804,42 +638,12 @@
             this.gBoxenginestate.Controls.Add(this.label3);
             this.gBoxenginestate.Controls.Add(this.lblStatusEngine);
             this.gBoxenginestate.Controls.Add(this.label2);
-            this.gBoxenginestate.Location = new System.Drawing.Point(718, 43);
+            this.gBoxenginestate.Location = new System.Drawing.Point(5, 208);
             this.gBoxenginestate.Name = "gBoxenginestate";
-            this.gBoxenginestate.Size = new System.Drawing.Size(281, 173);
+            this.gBoxenginestate.Size = new System.Drawing.Size(300, 173);
             this.gBoxenginestate.TabIndex = 13;
             this.gBoxenginestate.TabStop = false;
-            this.gBoxenginestate.Text = "Engine status";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label2.Location = new System.Drawing.Point(9, 41);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(88, 16);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "Actual status: ";
-            // 
-            // lblStatusEngine
-            // 
-            this.lblStatusEngine.AutoSize = true;
-            this.lblStatusEngine.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lblStatusEngine.Location = new System.Drawing.Point(98, 41);
-            this.lblStatusEngine.Name = "lblStatusEngine";
-            this.lblStatusEngine.Size = new System.Drawing.Size(38, 18);
-            this.lblStatusEngine.TabIndex = 1;
-            this.lblStatusEngine.Text = "OFF";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label3.Location = new System.Drawing.Point(15, 88);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(64, 16);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Encoder: ";
+            this.gBoxenginestate.Text = "Motor status";
             // 
             // lblEncoderStatus
             // 
@@ -851,45 +655,42 @@
             this.lblEncoderStatus.TabIndex = 3;
             this.lblEncoderStatus.Text = "0";
             // 
-            // btnReset
+            // label3
             // 
-            this.btnReset.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnReset.Location = new System.Drawing.Point(296, 21);
-            this.btnReset.Name = "btnReset";
-            this.btnReset.Size = new System.Drawing.Size(100, 35);
-            this.btnReset.TabIndex = 2;
-            this.btnReset.Text = "RESET";
-            this.btnReset.UseVisualStyleBackColor = true;
-            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label3.Location = new System.Drawing.Point(15, 88);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(64, 16);
+            this.label3.TabIndex = 2;
+            this.label3.Text = "Encoder: ";
             // 
-            // btnContSingle
+            // lblStatusEngine
             // 
-            this.btnContSingle.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnContSingle.Location = new System.Drawing.Point(98, 80);
-            this.btnContSingle.Name = "btnContSingle";
-            this.btnContSingle.Size = new System.Drawing.Size(137, 28);
-            this.btnContSingle.TabIndex = 23;
-            this.btnContSingle.Text = "CONTINUE";
-            this.btnContSingle.UseVisualStyleBackColor = true;
-            this.btnContSingle.Click += new System.EventHandler(this.btnContSingle_Click);
+            this.lblStatusEngine.AutoSize = true;
+            this.lblStatusEngine.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblStatusEngine.Location = new System.Drawing.Point(98, 41);
+            this.lblStatusEngine.Name = "lblStatusEngine";
+            this.lblStatusEngine.Size = new System.Drawing.Size(38, 18);
+            this.lblStatusEngine.TabIndex = 1;
+            this.lblStatusEngine.Text = "OFF";
             // 
-            // btn10
+            // label2
             // 
-            this.btn10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btn10.Location = new System.Drawing.Point(174, 13);
-            this.btn10.Name = "btn10";
-            this.btn10.Size = new System.Drawing.Size(60, 28);
-            this.btn10.TabIndex = 24;
-            this.btn10.Text = "10";
-            this.btn10.UseVisualStyleBackColor = true;
-            this.btn10.Click += new System.EventHandler(this.btn10_Click);
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label2.Location = new System.Drawing.Point(9, 41);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(50, 16);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "Status: ";
             // 
             // gBoxVisionApp
             // 
             this.gBoxVisionApp.Controls.Add(this.btnExternalexe);
-            this.gBoxVisionApp.Location = new System.Drawing.Point(5, 375);
+            this.gBoxVisionApp.Location = new System.Drawing.Point(5, 387);
             this.gBoxVisionApp.Name = "gBoxVisionApp";
-            this.gBoxVisionApp.Size = new System.Drawing.Size(275, 100);
+            this.gBoxVisionApp.Size = new System.Drawing.Size(300, 92);
             this.gBoxVisionApp.TabIndex = 14;
             this.gBoxVisionApp.TabStop = false;
             this.gBoxVisionApp.Text = "Knee Joint Vision Measurement App ";
@@ -902,14 +703,11 @@
             this.Controls.Add(this.gBoxVisionApp);
             this.Controls.Add(this.gBoxenginestate);
             this.Controls.Add(this.gBoxengine);
-            this.Controls.Add(this.groupBox9);
-            this.Controls.Add(this.groupBox8);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.menuStrip1);
             this.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
             this.Text = "Rehabilitation Platform Controller";
@@ -924,19 +722,12 @@
             this.groupBox13.PerformLayout();
             this.groupBox12.ResumeLayout(false);
             this.groupBox12.PerformLayout();
-            this.groupBox11.ResumeLayout(false);
-            this.groupBox11.PerformLayout();
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
-            this.groupBox6.ResumeLayout(false);
-            this.groupBox6.PerformLayout();
-            this.groupBox5.ResumeLayout(false);
-            this.groupBox5.PerformLayout();
-            this.groupBox8.ResumeLayout(false);
-            this.groupBox8.PerformLayout();
+            this.groupBox11.ResumeLayout(false);
+            this.groupBox11.PerformLayout();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            this.groupBox9.ResumeLayout(false);
             this.gBoxengine.ResumeLayout(false);
             this.gBoxenginestate.ResumeLayout(false);
             this.gBoxenginestate.PerformLayout();
@@ -955,24 +746,9 @@
         private System.Windows.Forms.Button btnOpen;
         private System.Windows.Forms.TextBox tBoxDataOut;
         private System.IO.Ports.SerialPort serialPort1;
-        private System.Windows.Forms.CheckBox chBoxRTSEnable;
-        private System.Windows.Forms.CheckBox chBoxDtrEnable;
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.GroupBox groupBox6;
-        private System.Windows.Forms.CheckBox chBoxWrite;
-        private System.Windows.Forms.CheckBox chBoxWriteLine;
-        private System.Windows.Forms.GroupBox groupBox5;
-        private System.Windows.Forms.CheckBox chBoxUsingEnter;
-        private System.Windows.Forms.CheckBox chBoxUsingButton;
         private System.Windows.Forms.GroupBox groupBox7;
         private System.Windows.Forms.Label lblStatusCom;
-        private System.Windows.Forms.GroupBox groupBox8;
-        private System.Windows.Forms.CheckBox chBoxAddToOldData;
-        private System.Windows.Forms.CheckBox chBoxAlwaysUpdate;
-        private System.Windows.Forms.Button btnClearDataIN;
-        private System.Windows.Forms.TextBox tBoxDataIN;
-        private System.Windows.Forms.Label lblDataInLength;
-        private System.Windows.Forms.Label label8;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
@@ -989,7 +765,6 @@
         private System.Windows.Forms.Button btn60;
         private System.Windows.Forms.Button btn45;
         private System.Windows.Forms.Button btn30;
-        private System.Windows.Forms.GroupBox groupBox9;
         private System.Windows.Forms.GroupBox groupBox12;
         private System.Windows.Forms.CheckBox chboxRightleg;
         private System.Windows.Forms.GroupBox groupBox11;
