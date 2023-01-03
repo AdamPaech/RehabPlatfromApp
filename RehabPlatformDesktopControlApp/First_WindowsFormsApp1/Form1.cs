@@ -100,6 +100,8 @@ namespace First_WindowsFormsApp1
             groupBox13.Enabled = false;
             //lege selection is off at start
             groupBox12.Enabled = false;
+            //speed chbox disabled
+            gBoxSpeed.Enabled = false;
             //stop button is off at start
             btnStop.Enabled = false;
             //reset button is off at start
@@ -190,6 +192,20 @@ namespace First_WindowsFormsApp1
                 {
                     groupBox13.Enabled = false;
                 }
+                //
+                if (chBoxSlow.Checked = true)
+                {
+                    chBoxSlow.Checked = false;
+                }
+                else if (chBoxFast.Checked == true)
+                {
+                    chBoxFast.Checked = false;
+                }
+                if (gBoxSpeed.Enabled = true)
+                {
+                    gBoxSpeed.Enabled = false;
+                }
+
                 //
                 timer1.Stop();
                 serialPort1.Close();
@@ -644,8 +660,7 @@ namespace First_WindowsFormsApp1
             {
                 dataOUT = "INIT";
                 serialPort1.Write(dataOUT);
-                //lege selection is off at start
-                groupBox12.Enabled = true;
+                gBoxSpeed.Enabled = true;
             }
         }
 
@@ -784,6 +799,47 @@ namespace First_WindowsFormsApp1
 
         private void chBoxUsingEnter_CheckedChanged(object sender, EventArgs e)
         {
+
+        }
+
+        private void chBoxSlow_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chBoxSlow.Checked)
+            {
+                if (serialPort1.IsOpen)
+                {
+                    dataOUT = "SLOW";
+                    serialPort1.Write(dataOUT);
+                }
+                chBoxSlow.Checked = true;
+                chBoxFast.Checked = false;
+                //enable leg selection chbox
+                groupBox12.Enabled = true;
+            }
+            else
+            {
+                groupBox12.Enabled = false;
+            }
+        }
+
+        private void chBoxFast_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chBoxFast.Checked)
+            {
+                if (serialPort1.IsOpen)
+                {
+                    dataOUT = "FAST";
+                    serialPort1.Write(dataOUT);
+                }
+                chBoxSlow.Checked = false;
+                chBoxFast.Checked = true;
+                //enable leg selection chbox
+                groupBox12.Enabled = true;
+            }
+            else
+            {
+                groupBox12.Enabled = false;
+            }
 
         }
     }

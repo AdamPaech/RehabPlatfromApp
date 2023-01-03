@@ -31,3 +31,7 @@ D:\Praca inzynierska\Aplikacja desktopowa\RehabPlatfromApp\RehabPlatformDesktopC
 D:\Praca inzynierska\Aplikacja desktopowa\RehabPlatfromApp\RehabPlatformDesktopControlApp\First_WindowsFormsApp1\obj\Debug\First_WindowsFormsApp1.csproj.CoreCompileInputs.cache
 D:\Praca inzynierska\Aplikacja desktopowa\RehabPlatfromApp\RehabPlatformDesktopControlApp\First_WindowsFormsApp1\obj\Debug\First_WindowsFormsApp1.exe
 D:\Praca inzynierska\Aplikacja desktopowa\RehabPlatfromApp\RehabPlatformDesktopControlApp\First_WindowsFormsApp1\obj\Debug\First_WindowsFormsApp1.pdb
+D:\Praca inzynierska\Aplikacja desktopowa\RehabPlatfromApp\RehabPlatformDesktopControlApp\First_WindowsFormsApp1\bin\Debug\First_WindowsFormsApp1.exe.manifest
+D:\Praca inzynierska\Aplikacja desktopowa\RehabPlatfromApp\RehabPlatformDesktopControlApp\First_WindowsFormsApp1\bin\Debug\First_WindowsFormsApp1.application
+D:\Praca inzynierska\Aplikacja desktopowa\RehabPlatfromApp\RehabPlatformDesktopControlApp\First_WindowsFormsApp1\obj\Debug\First_WindowsFormsApp1.exe.manifest
+D:\Praca inzynierska\Aplikacja desktopowa\RehabPlatfromApp\RehabPlatformDesktopControlApp\First_WindowsFormsApp1\obj\Debug\First_WindowsFormsApp1.application
